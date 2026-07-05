@@ -1,11 +1,10 @@
 /* ============================================
-   Irsha Global LLC — Main JavaScript
-   Minimal · Refined · Performant
+   Irsha Global — Smooth Interactions
    ============================================ */
 
 'use strict';
 
-// ----- Debounce utility -----
+// ----- Debounce -----
 function debounce(fn, delay = 80) {
   let timer;
   return (...args) => {
@@ -15,20 +14,19 @@ function debounce(fn, delay = 80) {
 }
 
 // ============================================
-// 1. NAVIGATION SCROLL EFFECT
+// 1. NAV SCROLL
 // ============================================
 (function initNavScroll() {
-  const navbar = document.getElementById('navbar');
-  if (!navbar) return;
+  const nav = document.getElementById('nav');
+  if (!nav) return;
 
   window.addEventListener('scroll', () => {
-    const scrollY = window.scrollY;
-    navbar.classList.toggle('scrolled', scrollY > 60);
+    nav.classList.toggle('scrolled', window.scrollY > 60);
   }, { passive: true });
 })();
 
 // ============================================
-// 2. MOBILE HAMBURGER
+// 2. MOBILE MENU
 // ============================================
 (function initMobileMenu() {
   const hamburger = document.getElementById('hamburger');
@@ -36,89 +34,72 @@ function debounce(fn, delay = 80) {
   const links = document.querySelectorAll('.mobile-link');
   if (!hamburger || !overlay) return;
 
-  function toggleMenu() {
-    const isOpen = !overlay.classList.contains('open');
-    hamburger.classList.toggle('active', isOpen);
-    overlay.classList.toggle('open', isOpen);
-    document.body.style.overflow = isOpen ? 'hidden' : '';
+  function toggle(force) {
+    const open = force ?? !overlay.classList.contains('open');
+    hamburger.classList.toggle('active', open);
+    overlay.classList.toggle('open', open);
+    document.body.style.overflow = open ? 'hidden' : '';
   }
 
-  hamburger.addEventListener('click', toggleMenu);
-
-  links.forEach((link) => {
-    link.addEventListener('click', () => {
-      if (overlay.classList.contains('open')) toggleMenu();
-    });
-  });
+  hamburger.addEventListener('click', () => toggle());
+  links.forEach(l => l.addEventListener('click', () => toggle(false)));
 })();
 
 // ============================================
-// 3. SCROLL REVEAL (Intersection Observer)
+// 3. SCROLL REVEAL
 // ============================================
 (function initReveal() {
-  const revealElements = document.querySelectorAll('[data-reveal]');
-  if (!revealElements.length) return;
+  const els = document.querySelectorAll('[data-reveal]');
+  if (!els.length) return;
 
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          const el = entry.target;
-          if (el.dataset.reveal === 'draw') {
-            el.style.transform = 'scaleX(0)';
-            void el.offsetWidth;
-            el.classList.add('revealed');
-          } else {
-            el.classList.add('revealed');
-          }
-          observer.unobserve(el);
-        }
-      });
-    },
-    {
-      threshold: 0.08,
-      rootMargin: '0px 0px -40px 0px',
-    }
-  );
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('revealed');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
 
-  revealElements.forEach((el) => observer.observe(el));
+  els.forEach(el => observer.observe(el));
 })();
 
 // ============================================
-// 4. SMOOTH SCROLL FOR ANCHOR LINKS
+// 4. SMOOTH SCROLL
 // ============================================
 (function initSmoothScroll() {
-  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-    anchor.addEventListener('click', (e) => {
-      const targetId = anchor.getAttribute('href');
-      if (targetId === '#') return;
-      const target = document.querySelector(targetId);
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', e => {
+      const id = anchor.getAttribute('href');
+      if (id === '#') return;
+      const target = document.querySelector(id);
       if (target) {
         e.preventDefault();
-        const offset = 80;
-        const targetPosition = target.getBoundingClientRect().top + window.scrollY - offset;
-        window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+        window.scrollTo({
+          top: target.getBoundingClientRect().top + window.scrollY - 80,
+          behavior: 'smooth'
+        });
       }
     });
   });
 })();
 
 // ============================================
-// 5. SCROLL INDICATOR FADE
+// 5. SCROLL INDICATOR
 // ============================================
 (function initScrollIndicator() {
-  const indicator = document.getElementById('scrollIndicator');
-  if (!indicator) return;
+  const el = document.getElementById('scrollIndicator');
+  if (!el) return;
 
   window.addEventListener('scroll', () => {
-    const scrollY = window.scrollY;
-    indicator.style.opacity = scrollY > 180 ? '0' : '1';
-    indicator.style.pointerEvents = scrollY > 180 ? 'none' : 'all';
+    const hidden = window.scrollY > 180;
+    el.style.opacity = hidden ? '0' : '1';
+    el.style.pointerEvents = hidden ? 'none' : 'all';
   }, { passive: true });
 })();
 
 // ============================================
-// 6. PARALLAX EFFECT ON HERO (gentle)
+// 6. HERO PARALLAX (gentle)
 // ============================================
 (function initParallax() {
   const hero = document.getElementById('hero');
@@ -131,11 +112,10 @@ function debounce(fn, delay = 80) {
     if (!ticking) {
       requestAnimationFrame(() => {
         const scrollY = window.scrollY;
-        const heroHeight = hero.offsetHeight;
-        if (scrollY <= heroHeight) {
-          const offset = scrollY * 0.25;
-          content.style.transform = `translateY(${offset}px)`;
-          content.style.opacity = Math.max(0, 1 - (scrollY / heroHeight) * 0.4);
+        const h = hero.offsetHeight;
+        if (scrollY <= h) {
+          content.style.transform = `translateY(${scrollY * 0.2}px)`;
+          content.style.opacity = Math.max(0, 1 - (scrollY / h) * 0.35);
         }
         ticking = false;
       });
@@ -145,61 +125,43 @@ function debounce(fn, delay = 80) {
 })();
 
 // ============================================
-// 7. VENTURE CARD GLOW FOLLOW (Desktop)
+// 7. HERO ORB PARALLAX (desktop)
 // ============================================
-(function initCardGlow() {
-  const cards = document.querySelectorAll('.venture-card');
-  if (!cards.length) return;
-
-  const isMobile = window.matchMedia('(max-width: 768px)').matches;
-  if (isMobile) return;
-
-  cards.forEach((card) => {
-    let glow = card.querySelector('.venture-card-bg');
-    if (!glow) {
-      glow = document.createElement('div');
-      glow.className = 'venture-card-bg';
-      card.appendChild(glow);
-    }
-
-    card.addEventListener('mousemove', (e) => {
-      const rect = card.getBoundingClientRect();
-      const x = ((e.clientX - rect.left) / rect.width) * 100;
-      const y = ((e.clientY - rect.top) / rect.height) * 100;
-      glow.style.setProperty('--mx', `${x}%`);
-      glow.style.setProperty('--my', `${y}%`);
-      glow.style.opacity = '0.6';
-    });
-
-    card.addEventListener('mouseleave', () => {
-      glow.style.opacity = '0.4';
-    });
-  });
-})();
-
-// ============================================
-// 8. HERO GLOW PARALLAX (Desktop)
-// ============================================
-(function initHeroGlow() {
+(function initOrbParallax() {
   const hero = document.querySelector('.hero');
-  const glows = hero?.querySelectorAll('.hero-glow');
-  if (!hero || !glows?.length) return;
+  const orbs = hero?.querySelectorAll('.hero-orb');
+  if (!hero || !orbs?.length) return;
+  if (window.matchMedia('(max-width: 768px)').matches) return;
 
-  const isMobile = window.matchMedia('(max-width: 768px)').matches;
-  if (isMobile) return;
-
-  hero.addEventListener('mousemove', (e) => {
+  hero.addEventListener('mousemove', e => {
     const rect = hero.getBoundingClientRect();
     const x = (e.clientX - rect.left) / rect.width;
     const y = (e.clientY - rect.top) / rect.height;
 
-    glows.forEach((glow, i) => {
-      const speed = 15 + i * 10;
-      const moveX = (x - 0.5) * speed;
-      const moveY = (y - 0.5) * speed;
-      glow.style.transform = `translate(${moveX}px, ${moveY}px)`;
+    orbs.forEach((orb, i) => {
+      const speed = 20 + i * 12;
+      orb.style.transform = `translate(${(x - 0.5) * speed}px, ${(y - 0.5) * speed}px)`;
     });
   });
 })();
 
-console.log('Irsha Global LLC — Site initialized.');
+// ============================================
+// 8. VENTURE CARD GLOW FOLLOW (desktop)
+// ============================================
+(function initCardGlow() {
+  const cards = document.querySelectorAll('.project-card');
+  if (!cards.length) return;
+  if (window.matchMedia('(max-width: 768px)').matches) return;
+
+  cards.forEach(card => {
+    card.addEventListener('mousemove', e => {
+      const rect = card.getBoundingClientRect();
+      const x = ((e.clientX - rect.left) / rect.width) * 100;
+      const y = ((e.clientY - rect.top) / rect.height) * 100;
+      card.style.setProperty('--mx', `${x}%`);
+      card.style.setProperty('--my', `${y}%`);
+    });
+  });
+})();
+
+console.log('Irsha Global — initialized.');

@@ -3,34 +3,58 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Irsha Global LLC — Holding Company | Parent of Talkingo & Mangodish</title>
-  <meta name="description" content="Irsha Global LLC launches ambitious digital products. Portfolio includes Talkingo (AI language practice) and Mangodish (restaurant management).">
+
+  <!-- Primary Meta -->
+  <title>Irsha Global — Venture Studio | Building Talkingo & Mangodish</title>
+  <meta name="description" content="Irsha Global is a venture studio that conceives, builds, and launches digital products. Creators of Talkingo (AI language practice) and Mangodish (restaurant OS).">
+  <meta name="keywords" content="Irsha Global, venture studio, Talkingo, Mangodish, AI language learning, restaurant management, product studio">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://irsha.me/">
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Irsha Global LLC — Holding Company | Parent of Talkingo & Mangodish">
-  <meta property="og:description" content="Irsha Global LLC launches ambitious digital products. Portfolio includes Talkingo (AI language practice) and Mangodish (restaurant management).">
+  <meta property="og:title" content="Irsha Global — Venture Studio | Talkingo & Mangodish">
+  <meta property="og:description" content="We conceive, build, and launch digital products. Creators of Talkingo and Mangodish.">
   <meta property="og:url" content="https://irsha.me/">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="https://irsha.me/assets/og-image.svg">
+  <meta property="og:image" content="https://irsha.me/assets/og-image.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
+  <meta property="og:site_name" content="Irsha Global">
+  <meta property="og:locale" content="en_US">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Irsha Global LLC — Holding Company | Parent of Talkingo & Mangodish">
-  <meta name="twitter:description" content="Irsha Global LLC launches ambitious digital products. Portfolio includes Talkingo (AI language practice) and Mangodish (restaurant management).">
-  <meta name="twitter:image" content="https://irsha.me/assets/og-image.svg">
+  <meta name="twitter:title" content="Irsha Global — Venture Studio | Talkingo & Mangodish">
+  <meta name="twitter:description" content="We conceive, build, and launch digital products. Creators of Talkingo and Mangodish.">
+  <meta name="twitter:image" content="https://irsha.me/assets/og-image.jpg">
 
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
   <link rel="apple-touch-icon" href="assets/favicon.svg">
 
-  <!-- Fonts -->
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Irsha Global",
+    "url": "https://irsha.me/",
+    "logo": "https://irsha.me/assets/favicon.svg",
+    "description": "A venture studio that conceives, builds, and launches digital products.",
+    "foundingDate": "2024",
+    "email": "hello@irsha.me",
+    "knowsAbout": ["AI Language Learning", "Restaurant Technology"],
+    "owns": [
+      { "@type": "Product", "name": "Talkingo", "url": "https://talkingo.ai" },
+      { "@type": "Product", "name": "Mangodish", "url": "https://mangodish.com" }
+    ]
+  }
+  </script>
+
+  <!-- Fonts: Instrument Serif (headings) + DM Sans (body) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
 
   <!-- Styles -->
   <link rel="stylesheet" href="css/styles.css">
@@ -38,35 +62,37 @@
 <body>
 
   <!-- ===== NAVIGATION ===== -->
-  <nav class="navbar" id="navbar">
+  <nav class="nav" id="nav">
     <div class="nav-inner">
       <a href="#" class="nav-logo" aria-label="Irsha Global Home">
         <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="0.5" y="0.5" width="31" height="31" rx="15.5" stroke="currentColor" stroke-opacity="0.4"/>
-          <text x="16" y="22" font-family="'Times New Roman', Georgia, serif" font-size="20" font-weight="700" fill="currentColor" text-anchor="middle" letter-spacing="1">I</text>
+          <rect x="0.5" y="0.5" width="31" height="31" rx="15.5" stroke="currentColor" stroke-width="1.2"/>
+          <text x="16" y="21.5" font-family="'Instrument Serif', Georgia, serif" font-size="18" font-weight="600" fill="currentColor" text-anchor="middle">I</text>
         </svg>
-        <span class="nav-logo-text">Irsha Global</span>
+        <span>Irsha Global</span>
       </a>
+
       <div class="nav-links" id="navLinks">
-        <a href="#ventures" class="nav-link">Ventures</a>
+        <a href="#projects" class="nav-link">Projects</a>
         <a href="#about" class="nav-link">About</a>
-        <a href="#approach" class="nav-link">Approach</a>
+        <a href="#process" class="nav-link">Process</a>
         <a href="#contact" class="nav-link">Contact</a>
       </div>
+
       <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu">
-        <span class="hamburger-line"></span>
-        <span class="hamburger-line"></span>
-        <span class="hamburger-line"></span>
+        <span></span>
+        <span></span>
+        <span></span>
       </button>
     </div>
   </nav>
 
-  <!-- Mobile Overlay -->
+  <!-- ===== MOBILE OVERLAY ===== -->
   <div class="mobile-overlay" id="mobileOverlay">
     <div class="mobile-overlay-content">
-      <a href="#ventures" class="mobile-link">Ventures</a>
+      <a href="#projects" class="mobile-link">Projects</a>
       <a href="#about" class="mobile-link">About</a>
-      <a href="#approach" class="mobile-link">Approach</a>
+      <a href="#process" class="mobile-link">Process</a>
       <a href="#contact" class="mobile-link">Contact</a>
     </div>
   </div>
@@ -74,371 +100,348 @@
   <!-- ===== HERO ===== -->
   <section class="hero" id="hero">
     <div class="hero-bg">
-      <div class="hero-glow hero-glow--1"></div>
-      <div class="hero-glow hero-glow--2"></div>
-      <div class="hero-glow hero-glow--3"></div>
+      <div class="hero-orb hero-orb--1"></div>
+      <div class="hero-orb hero-orb--2"></div>
+      <div class="hero-orb hero-orb--3"></div>
     </div>
+
     <div class="hero-content">
-      <div class="hero-badge">Founded 2024</div>
+      <div class="hero-tag">
+        <span>Est. 2024</span>
+      </div>
+
       <h1 class="hero-title">
-        <span class="hero-title-line">Building ventures</span>
-        <span class="hero-title-line hero-title-line--accent">that matter.</span>
+        <span class="hero-line hero-line--reveal">We build products</span>
+        <span class="hero-line hero-line--reveal hero-line--accent">that connect, teach,</span>
+        <span class="hero-line hero-line--reveal">and empower.</span>
       </h1>
-      <p class="hero-sub">
-        Irsha Global LLC is a holding company that launches ambitious digital products — from AI-powered language learning to restaurant management infrastructure.
+
+      <p class="hero-sub hero-line--reveal">
+        Irsha Global is a venture studio behind <a href="https://talkingo.ai" target="_blank" rel="noopener">Talkingo</a> and <a href="https://mangodish.com" target="_blank" rel="noopener">Mangodish</a>. We identify gaps where technology can create meaningful human impact — then design, build, and scale products that fill them.
       </p>
-      <div class="hero-actions">
-        <a href="#ventures" class="btn btn-primary">
-          Explore ventures
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h8M8 4l4 4-4 4"/></svg>
+
+      <div class="hero-actions hero-line--reveal">
+        <a href="#projects" class="btn btn-primary">
+          View our projects
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h8M8 4l4 4-4 4"/></svg>
         </a>
-        <a href="#contact" class="btn btn-ghost">
+        <a href="#contact" class="btn btn-outline">
           Get in touch
         </a>
       </div>
-      <div class="hero-stats">
-        <div class="hero-stat">
-          <span class="hero-stat-num">2024</span>
-          <span class="hero-stat-label">Founded</span>
+
+      <div class="hero-metrics">
+        <div class="hero-metric">
+          <span class="hero-metric-num">2024</span>
+          <span class="hero-metric-label">Founded</span>
         </div>
-        <div class="hero-stat-divider"></div>
-        <div class="hero-stat">
-          <span class="hero-stat-num">2</span>
-          <span class="hero-stat-label">Portfolio Cos.</span>
+        <div class="hero-metric-dot"></div>
+        <div class="hero-metric">
+          <span class="hero-metric-num">2</span>
+          <span class="hero-metric-label">Live Projects</span>
         </div>
-        <div class="hero-stat-divider"></div>
-        <div class="hero-stat">
-          <span class="hero-stat-num">30+</span>
-          <span class="hero-stat-label">Languages</span>
+        <div class="hero-metric-dot"></div>
+        <div class="hero-metric">
+          <span class="hero-metric-num">30+</span>
+          <span class="hero-metric-label">Languages</span>
         </div>
-        <div class="hero-stat-divider"></div>
-        <div class="hero-stat">
-          <span class="hero-stat-num">Global</span>
-          <span class="hero-stat-label">Reach</span>
+        <div class="hero-metric-dot"></div>
+        <div class="hero-metric">
+          <span class="hero-metric-num">Global</span>
+          <span class="hero-metric-label">Reach</span>
         </div>
       </div>
     </div>
-    <div class="scroll-indicator" id="scrollIndicator">
-      <svg width="20" height="30" viewBox="0 0 20 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect x="1.5" y="1.5" width="17" height="27" rx="8.5" stroke="currentColor" stroke-opacity="0.3" stroke-width="1.5"/>
-        <circle cx="10" cy="9" r="2.5" fill="currentColor" opacity="0.6">
-          <animate attributeName="cy" values="9;18;9" dur="2s" repeatCount="indefinite"/>
+
+    <div class="hero-scroll" id="scrollIndicator">
+      <svg width="16" height="24" viewBox="0 0 16 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="1.5" y="1.5" width="13" height="21" rx="6.5" stroke="currentColor" stroke-width="1.5" opacity="0.3"/>
+        <circle cx="8" cy="7" r="2" fill="currentColor" opacity="0.6">
+          <animate attributeName="cy" values="7;14;7" dur="2s" repeatCount="indefinite"/>
           <animate attributeName="opacity" values="0.6;0.15;0.6" dur="2s" repeatCount="indefinite"/>
         </circle>
       </svg>
     </div>
   </section>
 
-  <!-- ===== VENTURES ===== -->
-  <section class="ventures" id="ventures">
+  <!-- ===== PROJECTS ===== -->
+  <section class="projects" id="projects">
     <div class="container">
-      <div class="section-header" data-reveal="up">
-        <span class="section-tag">Portfolio</span>
-        <h2 class="section-title">Our ventures</h2>
-        <p class="section-desc">Products we've built, launched, and continue to grow.</p>
+      <div class="section-head" data-reveal>
+        <span class="section-label">Our work</span>
+        <h2 class="section-title">Featured projects</h2>
+        <p class="section-desc">Products we've conceived, built, and launched from the ground up.</p>
       </div>
 
       <!-- Talkingo -->
-      <div class="venture-block" data-reveal="up">
-        <div class="venture-card" data-accent="talkingo">
-          <div class="venture-card-bg"></div>
-          <div class="venture-card-content">
-            <div class="venture-top">
-              <div class="venture-brand">
-                <div class="venture-logo venture-logo--talkingo">
-                  <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="14" cy="14" r="12" stroke="currentColor" stroke-width="1.5" opacity="0.3"/>
-                    <path d="M14 8C10.686 8 8 10.686 8 14C8 17.314 10.686 20 14 20C15.757 20 17.343 19.258 18.464 18.036L20 20V16.393" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-                    <path d="M11 13.5H15.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity="0.7"/>
-                    <path d="M11 16H13.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity="0.7"/>
-                  </svg>
-                </div>
-                <div>
-                  <span class="venture-suptitle">Flagship Product</span>
-                  <h3 class="venture-name">Talkingo</h3>
-                </div>
-              </div>
-              <span class="venture-status status-live">
+      <article class="project" data-reveal>
+        <div class="project-card" data-brand="talkingo">
+          <div class="project-card-top">
+            <div class="project-brand">
+              <span class="project-badge">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="10" cy="10" r="8.5" stroke="currentColor" stroke-width="1.2" opacity="0.3"/>
+                  <path d="M10 5.5C7.515 5.5 5.5 7.515 5.5 10C5.5 12.485 7.515 14.5 10 14.5C11.22 14.5 12.322 14.006 13.124 13.205L14.5 14.5V11.95" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+                  <path d="M7.5 9.5h5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" opacity="0.6"/>
+                </svg>
+                Talkingo
+              </span>
+              <span class="project-status status-live">
                 <span class="status-dot"></span>
-                Live
+                Live product
               </span>
             </div>
 
-            <p class="venture-tagline">Speak from day one. Real conversations with AI tutors in 30 languages — no drills, no textbooks, just natural dialogue.</p>
+            <div class="project-layout">
+              <div class="project-info">
+                <h3 class="project-name">Speak a new language from day one.</h3>
+                <p class="project-desc">AI tutors that listen, correct, and adapt in real-time. No drills, no textbooks — just natural conversation across 30 languages.</p>
 
-            <div class="venture-details">
-              <div class="venture-detail">
-                <span class="detail-label">The Problem</span>
-                <p class="detail-text">Traditional language apps teach vocabulary and grammar in isolation. Learners memorize but can't speak. Talkingo flips the model — conversation-first, correction-always.</p>
-              </div>
-              <div class="venture-detail">
-                <span class="detail-label">The Approach</span>
-                <p class="detail-text">AI tutors that listen, correct, and adapt in real-time across three modes — Chat, Handsfree, and Live Call — each designed for a different comfort level on the journey to fluency.</p>
-              </div>
-            </div>
+                <div class="project-details">
+                  <div class="project-detail">
+                    <span class="detail-label">Challenge</span>
+                    <p class="detail-text">Traditional language apps teach vocabulary and grammar in isolation. Learners memorize but can't speak. Talkingo flips the model — conversation-first, correction-always.</p>
+                  </div>
+                  <div class="project-detail">
+                    <span class="detail-label">Solution</span>
+                    <p class="detail-text">AI tutors across three modes — Chat, Handsfree, Live Call — each designed for a different comfort level on the journey to fluency.</p>
+                  </div>
+                </div>
 
-            <div class="venture-modes">
-              <div class="v-mode">
-                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <rect x="1.5" y="1.5" width="15" height="15" rx="3" stroke="currentColor" stroke-width="1.2" opacity="0.5"/>
-                  <path d="M5 9.5L7.5 12L13 6.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" opacity="0.8"/>
-                </svg>
-                <div>
-                  <span class="v-mode-name">Chat</span>
-                  <span class="v-mode-desc">Text with live corrections</span>
-                </div>
-              </div>
-              <div class="v-mode">
-                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M9 1.5C5.962 1.5 3.5 3.962 3.5 7V9.5C3.5 12.538 5.962 15 9 15C12.038 15 14.5 12.538 14.5 9.5V7C14.5 3.962 12.038 1.5 9 1.5Z" stroke="currentColor" stroke-width="1.2"/>
-                  <path d="M6 9.5h6" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" opacity="0.5"/>
-                </svg>
-                <div>
-                  <span class="v-mode-name">Handsfree</span>
-                  <span class="v-mode-desc">Voice-only immersion</span>
-                </div>
-              </div>
-              <div class="v-mode">
-                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M3.5 7C3.5 3.962 5.962 1.5 9 1.5C12.038 1.5 14.5 3.962 14.5 7" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
-                  <path d="M3.5 9.5C3.5 12.538 5.962 15 9 15" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" opacity="0.7"/>
-                  <rect x="1.5" y="7" width="4" height="5" rx="1" stroke="currentColor" stroke-width="1.2"/>
-                  <rect x="12.5" y="7" width="4" height="5" rx="1" stroke="currentColor" stroke-width="1.2"/>
-                </svg>
-                <div>
-                  <span class="v-mode-name">Live Call</span>
-                  <span class="v-mode-desc">Full audio immersion</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="venture-stats-row">
-              <div class="v-stat">
-                <span class="v-stat-num">30</span>
-                <span class="v-stat-label">Languages</span>
-              </div>
-              <div class="v-stat">
-                <span class="v-stat-num">6</span>
-                <span class="v-stat-label">AI Tutors</span>
-              </div>
-              <div class="v-stat">
-                <span class="v-stat-num">12</span>
-                <span class="v-stat-label">CEFR Levels</span>
-              </div>
-              <div class="v-stat">
-                <span class="v-stat-num">300+</span>
-                <span class="v-stat-label">Scenarios</span>
-              </div>
-            </div>
-
-            <a href="https://talkingo.ai" target="_blank" rel="noopener noreferrer" class="venture-link">
-              Visit Talkingo
-              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10L10 4M10 4H6M10 4V8"/></svg>
-            </a>
-          </div>
-          <div class="venture-preview">
-            <div class="preview-frame preview-frame--talkingo">
-              <div class="preview-illum"></div>
-              <div class="preview-header">
-                <div class="preview-dots">
-                  <span></span><span></span><span></span>
-                </div>
-                <span class="preview-title">Chat — Spanish</span>
-                <span class="preview-status">AI Online</span>
-              </div>
-              <div class="preview-body">
-                <div class="preview-avatar-row">
-                  <div class="preview-avatar">
-                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <circle cx="16" cy="16" r="15" stroke="currentColor" stroke-width="1" opacity="0.2"/>
-                      <circle cx="16" cy="12" r="4" fill="currentColor" opacity="0.15"/>
-                      <path d="M8 24c0-4.418 3.582-8 8-8s8 3.582 8 8" stroke="currentColor" stroke-width="1.2" opacity="0.3"/>
-                    </svg>
-                    <span class="preview-avatar-name">Sofia</span>
-                  </div>
-                  <span class="preview-role">AI Tutor — Spanish</span>
-                </div>
-                <div class="preview-chat">
-                  <div class="preview-msg msg-ai">
-                    <span class="msg-label">Sofia</span>
-                    &iexcl;Hola! &iquest;C&oacute;mo est&aacute;s hoy?
-                  </div>
-                  <div class="preview-msg msg-user">
-                    <span class="msg-label">You</span>
-                    &iexcl;Hola! Estoy bien, &iquest;y t&uacute;?
-                  </div>
-                  <div class="preview-msg msg-ai">
-                    <span class="msg-label">Sofia</span>
-                    Muy bien, gracias! Let's practice ordering food. &iquest;Qu&eacute; te gusta comer?
-                  </div>
-                  <div class="preview-msg msg-correction">
+                <div class="project-modes">
+                  <div class="mode-pill">
                     <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <circle cx="7" cy="7" r="6" stroke="currentColor" stroke-width="1" opacity="0.4"/>
-                      <path d="M4.5 7L6.5 9L9.5 5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+                      <rect x="1.5" y="1.5" width="11" height="11" rx="2" stroke="currentColor" stroke-width="1.2" opacity="0.5"/>
+                      <path d="M4 7.5l2 2 4-4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" opacity="0.8"/>
                     </svg>
-                    <span class="correction-label">Correction:</span> "Me gusta la pizza" &rarr; "Me gusta comer pizza" (add the infinitive)
+                    <span>Chat — text with live corrections</span>
+                  </div>
+                  <div class="mode-pill">
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M7 1.5C4.515 1.5 2.5 3.515 2.5 6v2.5c0 2.485 2.015 4.5 4.5 4.5s4.5-2.015 4.5-4.5V6c0-2.485-2.015-4.5-4.5-4.5z" stroke="currentColor" stroke-width="1.2"/>
+                      <path d="M4.5 7.5h5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" opacity="0.5"/>
+                    </svg>
+                    <span>Handsfree — voice-only immersion</span>
+                  </div>
+                  <div class="mode-pill">
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M2.5 5.5c0-2.485 2.015-4.5 4.5-4.5s4.5 2.015 4.5 4.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+                      <path d="M2.5 8c0 2.485 2.015 4.5 4.5 4.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" opacity="0.7"/>
+                      <rect x="1" y="5.5" width="3" height="3.5" rx="0.8" stroke="currentColor" stroke-width="1.2"/>
+                      <rect x="10" y="5.5" width="3" height="3.5" rx="0.8" stroke="currentColor" stroke-width="1.2"/>
+                    </svg>
+                    <span>Live Call — full audio immersion</span>
                   </div>
                 </div>
-                <div class="preview-input">
-                  <span class="preview-input-placeholder">Type your response...</span>
-                  <span class="preview-input-send">
-                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7L11 3L9 7L11 11L3 7Z"/></svg>
-                  </span>
+
+                <div class="project-stats">
+                  <div class="p-stat">
+                    <span class="p-stat-num">30</span>
+                    <span class="p-stat-label">Languages</span>
+                  </div>
+                  <div class="p-stat-divider"></div>
+                  <div class="p-stat">
+                    <span class="p-stat-num">6</span>
+                    <span class="p-stat-label">AI Tutors</span>
+                  </div>
+                  <div class="p-stat-divider"></div>
+                  <div class="p-stat">
+                    <span class="p-stat-num">12</span>
+                    <span class="p-stat-label">CEFR Levels</span>
+                  </div>
+                  <div class="p-stat-divider"></div>
+                  <div class="p-stat">
+                    <span class="p-stat-num">300+</span>
+                    <span class="p-stat-label">Scenarios</span>
+                  </div>
+                </div>
+
+                <a href="https://talkingo.ai" target="_blank" rel="noopener noreferrer" class="project-cta">
+                  Visit Talkingo
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10L10 4M10 4H6M10 4V8"/></svg>
+                </a>
+              </div>
+
+              <div class="project-visual">
+                <div class="phone-mockup" data-brand="talkingo">
+                  <div class="phone-notch"></div>
+                  <div class="phone-header">
+                    <div class="phone-avatar">
+                      <span class="phone-avatar-ring">S</span>
+                      <div>
+                        <span class="phone-avatar-name">Sofia</span>
+                        <span class="phone-avatar-role">AI Tutor — Spanish</span>
+                      </div>
+                    </div>
+                    <span class="phone-live">Live</span>
+                  </div>
+                  <div class="phone-chat">
+                    <div class="chat-bubble chat-bubble--ai">
+                      <span class="chat-bubble-sender">Sofia</span>
+                      &iexcl;Hola! &iquest;C&oacute;mo est&aacute;s hoy?
+                    </div>
+                    <div class="chat-bubble chat-bubble--user">
+                      <span class="chat-bubble-sender">You</span>
+                      &iexcl;Hola! Estoy bien, &iquest;y t&uacute;?
+                    </div>
+                    <div class="chat-bubble chat-bubble--ai">
+                      <span class="chat-bubble-sender">Sofia</span>
+                      Muy bien, gracias! Let's practice ordering food. &iquest;Qu&eacute; te gusta comer?
+                    </div>
+                    <div class="chat-correction">
+                      <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="6" cy="6" r="5" stroke="currentColor" stroke-width="0.8" opacity="0.4"/>
+                        <path d="M3.5 6L5 7.5L8.5 4" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                      <span><em>Correction:</em> "Me gusta la pizza" &rarr; "Me gusta <strong>comer</strong> pizza"</span>
+                    </div>
+                  </div>
+                  <div class="phone-input">
+                    <span>Type your response...</span>
+                    <span class="phone-send-btn">
+                      <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 6L8 2.5L6.5 6L8 9.5L2 6Z"/></svg>
+                    </span>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      </article>
 
       <!-- Mangodish -->
-      <div class="venture-block" data-reveal="up">
-        <div class="venture-card" data-accent="mangodish">
-          <div class="venture-card-bg"></div>
-          <div class="venture-card-content">
-            <div class="venture-top">
-              <div class="venture-brand">
-                <div class="venture-logo venture-logo--mangodish">
-                  <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M4 9H24L22 24H6L4 9Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" opacity="0.5"/>
-                    <path d="M14 9V4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity="0.7"/>
-                    <path d="M9 9C9 6.239 11.239 4 14 4C16.761 4 19 6.239 19 9" stroke="currentColor" stroke-width="1.5" opacity="0.3"/>
-                  </svg>
-                </div>
-                <div>
-                  <span class="venture-suptitle">Upcoming Venture</span>
-                  <h3 class="venture-name">Mangodish</h3>
-                </div>
-              </div>
-              <span class="venture-status status-dev">
+      <article class="project" data-reveal>
+        <div class="project-card" data-brand="mangodish">
+          <div class="project-card-top">
+            <div class="project-brand">
+              <span class="project-badge">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M2.5 6h15l-1.5 10H4L2.5 6Z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round" opacity="0.5"/>
+                  <path d="M10 6V3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" opacity="0.6"/>
+                  <path d="M6.5 6c0-1.933 1.567-3.5 3.5-3.5s3.5 1.567 3.5 3.5" stroke="currentColor" stroke-width="1.2" opacity="0.3"/>
+                </svg>
+                Mangodish
+              </span>
+              <span class="project-status status-dev">
                 <span class="status-dot"></span>
-                In Development
+                In development
               </span>
             </div>
 
-            <p class="venture-tagline">All-in-one restaurant management platform handling dine-in QR ordering, commission-free delivery, takeout, and real-time kitchen display.</p>
+            <div class="project-layout">
+              <div class="project-info">
+                <h3 class="project-name">Restaurant OS. One platform. Zero commission.</h3>
+                <p class="project-desc">All-in-one restaurant management platform handling dine-in QR ordering, commission-free delivery, takeout, and real-time kitchen display.</p>
 
-            <div class="venture-details">
-              <div class="venture-detail">
-                <span class="detail-label">The Problem</span>
-                <p class="detail-text">Restaurants juggle multiple systems — online ordering, POS, delivery aggregators, kitchen screens — each with its own fees, hardware, and complexity. Margins shrink, chaos grows.</p>
-              </div>
-              <div class="venture-detail">
-                <span class="detail-label">The Solution</span>
-                <p class="detail-text">A unified platform that replaces 4-5 separate tools. QR ordering, commission-free delivery, real-time KDS, and customer analytics — all in one dashboard, one subscription, zero headaches.</p>
-              </div>
-            </div>
-
-            <div class="venture-features">
-              <div class="v-feature">
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <rect x="1.5" y="2.5" width="13" height="11" rx="1.5" stroke="currentColor" stroke-width="1.2" opacity="0.5"/>
-                  <path d="M4 6h8M4 8.5h6M4 11h4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" opacity="0.6"/>
-                </svg>
-                <div>
-                  <span class="v-feature-name">QR Menus</span>
-                  <span class="v-feature-desc">Dine-in ordering from any device</span>
-                </div>
-              </div>
-              <div class="v-feature">
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M2 12L6 8L9 11L14 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" opacity="0.7"/>
-                  <circle cx="3.5" cy="12.5" r="1.5" stroke="currentColor" stroke-width="1.2"/>
-                  <circle cx="12.5" cy="3.5" r="1.5" stroke="currentColor" stroke-width="1.2"/>
-                </svg>
-                <div>
-                  <span class="v-feature-name">Online Ordering</span>
-                  <span class="v-feature-desc">Commission-free delivery & takeout</span>
-                </div>
-              </div>
-              <div class="v-feature">
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <rect x="1.5" y="1.5" width="13" height="13" rx="1.5" stroke="currentColor" stroke-width="1.2" opacity="0.5"/>
-                  <path d="M4 5h8M4 8h6M4 11h5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" opacity="0.6"/>
-                  <circle cx="12" cy="11.5" r="1.5" fill="currentColor" opacity="0.15"/>
-                </svg>
-                <div>
-                  <span class="v-feature-name">KDS</span>
-                  <span class="v-feature-desc">Real-time kitchen display system</span>
-                </div>
-              </div>
-              <div class="v-feature">
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <rect x="1.5" y="3.5" width="13" height="11" rx="1.5" stroke="currentColor" stroke-width="1.2" opacity="0.5"/>
-                  <path d="M5 1.5L8 3.5L11 1.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" opacity="0.6"/>
-                  <path d="M4 7h8M4 9.5h5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" opacity="0.6"/>
-                </svg>
-                <div>
-                  <span class="v-feature-name">Analytics</span>
-                  <span class="v-feature-desc">Dashboard & customer profiles</span>
-                </div>
-              </div>
-            </div>
-
-            <a href="https://mangodish.com" target="_blank" rel="noopener noreferrer" class="venture-link">
-              Visit Mangodish
-              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10L10 4M10 4H6M10 4V8"/></svg>
-            </a>
-          </div>
-          <div class="venture-preview">
-            <div class="preview-frame preview-frame--mangodish">
-              <div class="preview-illum"></div>
-              <div class="preview-header">
-                <div class="preview-dots">
-                  <span></span><span></span><span></span>
-                </div>
-                <span class="preview-title">KDS — Live Order</span>
-                <span class="preview-status">Table 7</span>
-              </div>
-              <div class="preview-body">
-                <div class="preview-order">
-                  <div class="order-items">
-                    <div class="order-row">
-                      <span class="order-qty">2x</span>
-                      <div class="order-info">
-                        <span class="order-name">Pad Thai</span>
-                        <span class="order-note">Extra spicy</span>
-                      </div>
-                      <span class="order-price">$28</span>
-                    </div>
-                    <div class="order-row">
-                      <span class="order-qty">1x</span>
-                      <div class="order-info">
-                        <span class="order-name">Green Curry</span>
-                        <span class="order-note">Vegan, no bell pepper</span>
-                      </div>
-                      <span class="order-price">$18</span>
-                    </div>
-                    <div class="order-row">
-                      <span class="order-qty">3x</span>
-                      <div class="order-info">
-                        <span class="order-name">Spring Rolls</span>
-                        <span class="order-note"></span>
-                      </div>
-                      <span class="order-price">$15</span>
-                    </div>
+                <div class="project-details">
+                  <div class="project-detail">
+                    <span class="detail-label">Challenge</span>
+                    <p class="detail-text">Restaurants juggle multiple systems — online ordering, POS, delivery aggregators, kitchen screens — each with its own fees, hardware, and complexity. Margins shrink, chaos grows.</p>
                   </div>
-                  <div class="order-total">
-                    <span>Total</span>
-                    <span>$61</span>
-                  </div>
-                  <div class="order-progress">
-                    <span class="order-progress-dot"></span>
-                    <span>KDS — In Progress &middot; 4 min</span>
+                  <div class="project-detail">
+                    <span class="detail-label">Solution</span>
+                    <p class="detail-text">A unified platform that replaces 4–5 separate tools. QR ordering, commission-free delivery, real-time KDS, and customer analytics — all in one dashboard.</p>
                   </div>
                 </div>
-                <div class="preview-eta">
-                  <span>Prep Time</span>
-                  <span>12 min</span>
+
+                <div class="project-features">
+                  <div class="feat">
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <rect x="1.5" y="2.5" width="11" height="9" rx="1.2" stroke="currentColor" stroke-width="1.1" opacity="0.5"/>
+                      <path d="M3 5.5h8M3 7.5h6M3 9.5h4" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" opacity="0.6"/>
+                    </svg>
+                    <span>QR Menus — dine-in ordering from any device</span>
+                  </div>
+                  <div class="feat">
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M1.5 10.5L5 7l2.5 2.5L12 3" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round" opacity="0.7"/>
+                      <circle cx="3" cy="11" r="1.2" stroke="currentColor" stroke-width="1.1"/>
+                      <circle cx="11" cy="3" r="1.2" stroke="currentColor" stroke-width="1.1"/>
+                    </svg>
+                    <span>Online ordering — commission-free delivery & takeout</span>
+                  </div>
+                  <div class="feat">
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <rect x="1.5" y="1.5" width="11" height="11" rx="1.2" stroke="currentColor" stroke-width="1.1" opacity="0.5"/>
+                      <path d="M3.5 4.5h7M3.5 7h5.5M3.5 9.5h4" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" opacity="0.6"/>
+                      <circle cx="10.5" cy="10" r="1.2" fill="currentColor" opacity="0.12"/>
+                    </svg>
+                    <span>KDS — real-time kitchen display system</span>
+                  </div>
+                  <div class="feat">
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <rect x="1.5" y="3.5" width="11" height="9" rx="1.2" stroke="currentColor" stroke-width="1.1" opacity="0.5"/>
+                      <path d="M4.5 1.5L7 3.5l2.5-2" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round" opacity="0.6"/>
+                      <path d="M3.5 6.5h7M3.5 8.5h4.5" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" opacity="0.6"/>
+                    </svg>
+                    <span>Analytics — dashboard & customer profiles</span>
+                  </div>
+                </div>
+
+                <a href="https://mangodish.com" target="_blank" rel="noopener noreferrer" class="project-cta">
+                  Visit Mangodish
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10L10 4M10 4H6M10 4V8"/></svg>
+                </a>
+              </div>
+
+              <div class="project-visual">
+                <div class="screen-mockup" data-brand="mangodish">
+                  <div class="screen-header">
+                    <div class="screen-dots">
+                      <span></span><span></span><span></span>
+                    </div>
+                    <span class="screen-title">KDS — Live Order</span>
+                    <span class="screen-badge screen-badge--amber">Table 7</span>
+                  </div>
+                  <div class="screen-body">
+                    <div class="kds-order">
+                      <div class="kds-row">
+                        <span class="kds-qty">2x</span>
+                        <div class="kds-info">
+                          <span class="kds-name">Pad Thai</span>
+                          <span class="kds-note">Extra spicy</span>
+                        </div>
+                        <span class="kds-price">$28</span>
+                      </div>
+                      <div class="kds-row">
+                        <span class="kds-qty">1x</span>
+                        <div class="kds-info">
+                          <span class="kds-name">Green Curry</span>
+                          <span class="kds-note">Vegan, no bell pepper</span>
+                        </div>
+                        <span class="kds-price">$18</span>
+                      </div>
+                      <div class="kds-row">
+                        <span class="kds-qty">3x</span>
+                        <div class="kds-info">
+                          <span class="kds-name">Spring Rolls</span>
+                          <span class="kds-note"></span>
+                        </div>
+                        <span class="kds-price">$15</span>
+                      </div>
+                    </div>
+                    <div class="kds-total">
+                      <span>Total</span>
+                      <span>$61</span>
+                    </div>
+                    <div class="kds-status">
+                      <span class="kds-status-dot"></span>
+                      <span>KDS — In Progress &middot; 4 min</span>
+                    </div>
+                    <div class="kds-eta">
+                      <span>Prep Time</span>
+                      <span>12 min</span>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      </article>
 
-      <div class="ventures-footer" data-reveal="up">
-        <span>More ventures launching soon.</span>
+      <div class="projects-more" data-reveal>
+        <span>More projects launching soon.</span>
       </div>
     </div>
   </section>
@@ -446,67 +449,64 @@
   <!-- ===== ABOUT ===== -->
   <section class="about" id="about">
     <div class="container">
-      <div class="about-grid" data-reveal="up">
-        <div class="about-text-col">
-          <span class="section-tag">About</span>
-          <h2 class="about-heading">We build digital products that <span class="text-accent">connect, teach, and empower</span>.</h2>
-          <p class="about-body">
-            Irsha Global LLC is a holding company that launches ambitious digital ventures from the ground up. We identify gaps where technology can create meaningful human impact — then design, build, and scale products that fill them.
-          </p>
-          <p class="about-body about-body--muted">
-            Our portfolio spans AI-powered language learning, restaurant management infrastructure, and beyond. Each venture operates with its own brand, team, and roadmap — united by a shared commitment to craft, utility, and enduring value.
-          </p>
+      <div class="about-grid" data-reveal>
+        <div class="about-content">
+          <span class="section-label">About</span>
+          <h2 class="about-title">We identify gaps where technology can create <span class="text-accent">meaningful human impact</span>.</h2>
+          <p class="about-body">Irsha Global is a venture studio that launches ambitious digital products from the ground up. We design, build, and scale ventures that connect, teach, and empower.</p>
+          <p class="about-body about-body--muted">Our portfolio spans AI-powered language learning, restaurant management infrastructure, and beyond. Each venture operates with its own brand, team, and roadmap — united by a shared commitment to craft, utility, and enduring value.</p>
         </div>
-        <div class="about-stats-col">
-          <div class="about-stat-card">
-            <span class="about-stat-num">2024</span>
-            <span class="about-stat-label">Founded</span>
+        <div class="about-cards">
+          <div class="stat-card">
+            <span class="stat-card-num">2024</span>
+            <span class="stat-card-label">Founded</span>
           </div>
-          <div class="about-stat-card">
-            <span class="about-stat-num">2</span>
-            <span class="about-stat-label">Portfolio Companies</span>
+          <div class="stat-card">
+            <span class="stat-card-num">2</span>
+            <span class="stat-card-label">Live Projects</span>
           </div>
-          <div class="about-stat-card">
-            <span class="about-stat-num">30+</span>
-            <span class="about-stat-label">Languages Covered</span>
+          <div class="stat-card">
+            <span class="stat-card-num">30+</span>
+            <span class="stat-card-label">Languages</span>
           </div>
-          <div class="about-stat-card">
-            <span class="about-stat-num">Global</span>
-            <span class="about-stat-label">Reach & Impact</span>
+          <div class="stat-card">
+            <span class="stat-card-num">Global</span>
+            <span class="stat-card-label">Reach</span>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ===== APPROACH ===== -->
-  <section class="approach" id="approach">
+  <!-- ===== PROCESS ===== -->
+  <section class="process" id="process">
     <div class="container">
-      <div class="section-header" data-reveal="up">
-        <span class="section-tag">Process</span>
-        <h2 class="section-title">How we build</h2>
-        <p class="section-desc">From insight to launch — our approach to venture creation.</p>
+      <div class="section-head" data-reveal>
+        <span class="section-label">How we work</span>
+        <h2 class="section-title">Our process</h2>
+        <p class="section-desc">From insight to launch — a repeatable approach to building products that matter.</p>
       </div>
-      <div class="approach-steps" data-reveal="up">
-        <div class="approach-step">
-          <span class="step-num">01</span>
-          <div class="step-body">
-            <h3 class="step-title">Identify</h3>
-            <p class="step-text">We find underserved needs where technology can create disproportionate impact — gaps where existing solutions are fragmented, expensive, or misaligned with how people actually live and work.</p>
+
+      <div class="process-steps" data-reveal>
+        <div class="process-step">
+          <span class="process-step-num">01</span>
+          <div class="process-step-body">
+            <h3 class="process-step-title">Identify</h3>
+            <p class="process-step-text">We find underserved needs where technology can create disproportionate impact — gaps where existing solutions are fragmented, expensive, or misaligned with how people actually live and work.</p>
           </div>
         </div>
-        <div class="approach-step">
-          <span class="step-num">02</span>
-          <div class="step-body">
-            <h3 class="step-title">Design</h3>
-            <p class="step-text">Starting from first principles, we craft experiences that feel intuitive and purposeful. Every feature is questioned. Every interaction is intentional. We ship when it's ready — not when the calendar says so.</p>
+        <div class="process-step">
+          <span class="process-step-num">02</span>
+          <div class="process-step-body">
+            <h3 class="process-step-title">Design</h3>
+            <p class="process-step-text">Starting from first principles, we craft experiences that feel intuitive and purposeful. Every feature is questioned. Every interaction is intentional. We ship when it's ready — not when the calendar says so.</p>
           </div>
         </div>
-        <div class="approach-step">
-          <span class="step-num">03</span>
-          <div class="step-body">
-            <h3 class="step-title">Launch & Iterate</h3>
-            <p class="step-text">We bring products to market with a lean, focused release, then evolve continuously based on real usage and feedback. Each venture operates independently with its own brand and roadmap.</p>
+        <div class="process-step">
+          <span class="process-step-num">03</span>
+          <div class="process-step-body">
+            <h3 class="process-step-title">Launch & Iterate</h3>
+            <p class="process-step-text">We bring products to market with a lean, focused release, then evolve continuously based on real usage and feedback. Each venture operates independently with its own brand and roadmap.</p>
           </div>
         </div>
       </div>
@@ -516,36 +516,37 @@
   <!-- ===== PHILOSOPHY ===== -->
   <section class="philosophy" id="philosophy">
     <div class="container">
-      <div class="section-header" data-reveal="up">
-        <span class="section-tag">What drives us</span>
+      <div class="section-head" data-reveal>
+        <span class="section-label">What drives us</span>
         <h2 class="section-title">Our philosophy</h2>
       </div>
-      <div class="values-grid" data-reveal="up">
-        <div class="value-card">
-          <div class="value-icon-wrap">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M12 3L15 9L21 10.5L16.5 15L17.5 21L12 18L6.5 21L7.5 15L3 10.5L9 9L12 3Z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/>
+
+      <div class="values" data-reveal>
+        <div class="value-item">
+          <div class="value-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 3l3 6 6 1.5-4.5 4.5 1 6L12 18l-5.5 3 1-6L3 10.5 9 9l3-6z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/>
             </svg>
           </div>
           <h3 class="value-title">Craft over speed</h3>
           <p class="value-text">We build with intention. Every pixel, every interaction, every detail — deliberate and refined. Good things take time.</p>
         </div>
-        <div class="value-card">
-          <div class="value-icon-wrap">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <div class="value-item">
+          <div class="value-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <circle cx="12" cy="12" r="7" stroke="currentColor" stroke-width="1.2"/>
-              <path d="M12 7V12L16 14" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+              <path d="M12 7v5l3 3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
             </svg>
           </div>
           <h3 class="value-title">Real over trendy</h3>
           <p class="value-text">We chase substance, not hype. Products that solve real problems for real people — not the other way around.</p>
         </div>
-        <div class="value-card">
-          <div class="value-icon-wrap">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <div class="value-item">
+          <div class="value-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.2"/>
-              <path d="M12 8V12L16 14" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
-              <circle cx="12" cy="12" r="3" fill="currentColor" opacity="0.15"/>
+              <path d="M12 8v4l3 3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+              <circle cx="12" cy="12" r="2.5" fill="currentColor" opacity="0.12"/>
             </svg>
           </div>
           <h3 class="value-title">People first</h3>
@@ -555,49 +556,60 @@
     </div>
   </section>
 
-  <!-- ===== FOOTER ===== -->
-  <footer class="footer" id="contact">
+  <!-- ===== CTA ===== -->
+  <section class="cta" id="contact">
     <div class="container">
-      <div class="footer-divider" data-reveal="draw"></div>
-      <div class="footer-content" data-reveal="up">
-        <div class="footer-main">
-          <div class="footer-brand">
-            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect x="0.75" y="0.75" width="38.5" height="38.5" rx="19.25" stroke="currentColor" stroke-opacity="0.3" stroke-width="1.5"/>
-              <text x="20" y="27" font-family="'Times New Roman', Georgia, serif" font-size="24" font-weight="700" fill="currentColor" text-anchor="middle" letter-spacing="1">I</text>
+      <div class="cta-card" data-reveal>
+        <span class="section-label section-label--light">Get in touch</span>
+        <h2 class="cta-title">Have a project in mind?<br>Let's talk.</h2>
+        <p class="cta-text">Whether you're interested in collaboration, investment, or just want to learn more — we'd love to hear from you.</p>
+        <a href="mailto:hello@irsha.me" class="btn btn-primary cta-btn">
+          hello@irsha.me
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h8M8 4l4 4-4 4"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer" id="footer">
+    <div class="container">
+      <div class="footer-main" data-reveal>
+        <div class="footer-brand">
+          <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="0.75" y="0.75" width="34.5" height="34.5" rx="17.25" stroke="currentColor" stroke-width="1.2" opacity="0.3"/>
+            <text x="18" y="23.5" font-family="'Instrument Serif', Georgia, serif" font-size="20" font-weight="600" fill="currentColor" text-anchor="middle">I</text>
+          </svg>
+          <div>
+            <span class="footer-brand-name">Irsha Global</span>
+            <span class="footer-brand-year">&copy; 2026</span>
+          </div>
+        </div>
+        <div class="footer-nav">
+          <a href="#projects" class="footer-link">Projects</a>
+          <a href="#about" class="footer-link">About</a>
+          <a href="#process" class="footer-link">Process</a>
+          <a href="#philosophy" class="footer-link">Philosophy</a>
+        </div>
+        <div class="footer-social">
+          <a href="mailto:hello@irsha.me" class="footer-email">hello@irsha.me</a>
+          <a href="#" class="footer-icon" aria-label="LinkedIn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="2" y="2" width="20" height="20" rx="4" stroke="currentColor" stroke-width="1.5" opacity="0.5"/>
+              <path d="M7 10v6.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              <path d="M7 7.5v.01" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              <path d="M12 16.5v-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              <path d="M17 16.5v-3.5c0-1.1-.9-2-2-2s-2 .9-2 2v3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
             </svg>
-            <div>
-              <span class="footer-brand-name">Irsha Global LLC</span>
-              <span class="footer-brand-tag">&copy; 2026 &middot; All rights reserved</span>
-            </div>
-          </div>
-          <div class="footer-links">
-            <a href="#ventures" class="footer-link">Ventures</a>
-            <a href="#about" class="footer-link">About</a>
-            <a href="#approach" class="footer-link">Approach</a>
-            <a href="#philosophy" class="footer-link">Philosophy</a>
-          </div>
-          <div class="footer-contact">
-            <a href="mailto:hello@irsha.me" class="footer-email">hello@irsha.me</a>
-            <a href="#" class="footer-social-link" aria-label="LinkedIn">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect x="2" y="2" width="20" height="20" rx="4" stroke="currentColor" stroke-width="1.5" opacity="0.6"/>
-                <path d="M7 10V17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity="0.8"/>
-                <path d="M7 7.5V7.51" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity="0.8"/>
-                <path d="M12 17V13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity="0.8"/>
-                <path d="M17 17V13.5C17 12.4 16.1 11.5 15 11.5C13.9 11.5 13 12.4 13 13.5V17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity="0.8"/>
-              </svg>
-            </a>
-          </div>
+          </a>
         </div>
-        <div class="footer-bottom">
-          <p class="footer-disclaimer">Irsha Global LLC is the parent company of <a href="https://talkingo.ai" target="_blank" rel="noopener">Talkingo</a> and <a href="https://mangodish.com" target="_blank" rel="noopener">Mangodish</a>.</p>
-        </div>
+      </div>
+      <div class="footer-bottom" data-reveal>
+        <p>Irsha Global is the parent company of <a href="https://talkingo.ai" target="_blank" rel="noopener">Talkingo</a> and <a href="https://mangodish.com" target="_blank" rel="noopener">Mangodish</a>.</p>
       </div>
     </div>
   </footer>
 
-  <!-- Scripts -->
   <script src="js/main.js"></script>
 </body>
 </html>

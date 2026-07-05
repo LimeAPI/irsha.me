@@ -1,12 +1,12 @@
-# Irsha Global LLC — irsha.me
+# Irsha Global — irsha.me
 
-The official holding company website for **Irsha Global LLC** — parent company of **[Talkingo](https://talkingo.ai)** and **[Mangodish](https://mangodish.com)**.
+The official website for **Irsha Global**, a venture studio behind **[Talkingo](https://talkingo.ai)** and **[Mangodish](https://mangodish.com)**.
 
-A premium, minimalist dark-luxury one-pager showcasing the vision and portfolio ventures. Refined typography, subtle animations, and brand-accented cards for each subsidiary.
+A warm, light, editorial-style portfolio — crafted with Instrument Serif headings, DM Sans body, and sophisticated gold/teal/amber accents.
 
 ## Portfolio
 
-| Venture | Status | Description |
+| Project | Status | Description |
 |---------|--------|-------------|
 | [Talkingo](https://talkingo.ai) | Live | AI language conversation practice — speak from day one |
 | [Mangodish](https://mangodish.com) | In Development | All-in-one restaurant management platform |
@@ -14,13 +14,15 @@ A premium, minimalist dark-luxury one-pager showcasing the vision and portfolio 
 ## Tech
 
 - Vanilla HTML / CSS / JS — zero dependencies
-- Google Fonts: DM Sans + Inter
-- Custom SVG icons (no emoji), scroll-triggered reveal animations, subtle glow effects
-- Brand-specific accent colors: Teal for Talkingo, Amber for Mangodish
+- Google Fonts: Instrument Serif + DM Sans
+- Custom SVG icons, scroll-triggered reveals, subtle parallax
+- Light theme with warm neutral palette
 - Fully responsive
+- Schema.org JSON-LD for rich search results
+- Open Graph / Twitter Card meta tags
 
 ## Deploy
 
-This site is served via **GitHub Pages** with a custom domain: [irsha.me](https://irsha.me)
+Served via **GitHub Pages** with a custom domain: [irsha.me](https://irsha.me)
 
 The `CNAME` file in root enables the custom domain.
