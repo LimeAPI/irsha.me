@@ -1,5 +1,5 @@
 /* ============================================
-   Irsha Global — Smooth Interactions
+   Irsha Global — Smooth Interactions (Dark)
    ============================================ */
 
 'use strict';
