@@ -1,12 +1,12 @@
 /* ============================================
    Irsha Global LLC — Main JavaScript
-   Animations · Interactions · Particles
+   Minimal · Refined · Performant
    ============================================ */
 
 'use strict';
 
 // ----- Debounce utility -----
-function debounce(fn, delay = 100) {
+function debounce(fn, delay = 80) {
   let timer;
   return (...args) => {
     clearTimeout(timer);
@@ -15,207 +15,20 @@ function debounce(fn, delay = 100) {
 }
 
 // ============================================
-// 1. CUSTOM CURSOR (Desktop only)
-// ============================================
-(function initCursor() {
-  const cursor = document.getElementById('cursorRing');
-  if (!cursor) return;
-
-  // Only enable custom cursor on devices with hover (desktop)
-  const hasHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
-  if (!hasHover) {
-    cursor.style.display = 'none';
-    return;
-  }
-  document.body.classList.add('has-cursor');
-
-  let mouseX = -100, mouseY = -100;
-  let cursorX = -100, cursorY = -100;
-  let isVisible = false;
-
-  document.addEventListener('mousemove', (e) => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-    if (!isVisible) {
-      isVisible = true;
-      cursor.style.opacity = '1';
-    }
-  });
-
-  document.addEventListener('mouseleave', () => {
-    isVisible = false;
-    cursor.style.opacity = '0';
-  });
-
-  document.addEventListener('mouseenter', () => {
-    isVisible = true;
-    cursor.style.opacity = '1';
-  });
-
-  // Smooth cursor follow
-  function updateCursor() {
-    cursorX += (mouseX - cursorX) * 0.15;
-    cursorY += (mouseY - cursorY) * 0.15;
-    cursor.style.transform = `translate(${cursorX}px, ${cursorY}px) translate(-50%, -50%)`;
-    requestAnimationFrame(updateCursor);
-  }
-  updateCursor();
-
-  // Hover effect on interactive elements
-  const hoverTargets = document.querySelectorAll(
-    'a, button, .btn, .nav-link, .social-link, .venture-card-inner, .v-tier'
-  );
-  hoverTargets.forEach((el) => {
-    el.addEventListener('mouseenter', () => cursor.classList.add('hovering'));
-    el.addEventListener('mouseleave', () => cursor.classList.remove('hovering'));
-  });
-})();
-
-// ============================================
-// 2. PARTICLE CANVAS (Gold Dust Motes)
-// ============================================
-(function initParticles() {
-  const canvas = document.getElementById('particleCanvas');
-  if (!canvas) return;
-  const ctx = canvas.getContext('2d');
-
-  let particles = [];
-  let mouse = { x: -1000, y: -1000 };
-  let animationId;
-
-  function resize() {
-    canvas.width = canvas.parentElement.offsetWidth;
-    canvas.height = canvas.parentElement.offsetHeight;
-  }
-  window.addEventListener('resize', debounce(resize, 200));
-  resize();
-
-  class Particle {
-    constructor() { this.reset(); }
-
-    reset() {
-      this.x = Math.random() * canvas.width;
-      this.y = Math.random() * canvas.height;
-      this.size = Math.random() * 2 + 0.5;
-      this.speedX = (Math.random() - 0.5) * 0.3;
-      this.speedY = (Math.random() - 0.5) * 0.3 - 0.1;
-      this.opacity = Math.random() * 0.5 + 0.1;
-      this.pulseSpeed = Math.random() * 0.02 + 0.005;
-      this.pulseOffset = Math.random() * Math.PI * 2;
-      this.baseOpacity = this.opacity;
-    }
-
-    update() {
-      this.x += this.speedX;
-      this.y += this.speedY;
-
-      // Gentle mouse interaction
-      const dx = mouse.x - this.x;
-      const dy = mouse.y - this.y;
-      const dist = Math.sqrt(dx * dx + dy * dy);
-      if (dist < 120) {
-        const force = (120 - dist) / 120;
-        this.x -= dx * force * 0.005;
-        this.y -= dy * force * 0.005;
-      }
-
-      // Pulse opacity
-      this.opacity = this.baseOpacity + Math.sin(Date.now() * this.pulseSpeed + this.pulseOffset) * 0.15;
-
-      // Wrap around edges
-      if (this.x < -10) this.x = canvas.width + 10;
-      if (this.x > canvas.width + 10) this.x = -10;
-      if (this.y < -10) this.y = canvas.height + 10;
-      if (this.y > canvas.height + 10) this.y = -10;
-    }
-
-    draw() {
-      ctx.beginPath();
-      ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(201, 169, 110, ${this.opacity})`;
-      ctx.fill();
-    }
-  }
-
-  // Create particles
-  const count = Math.min(Math.floor((canvas.width * canvas.height) / 8000), 100);
-  for (let i = 0; i < count; i++) {
-    particles.push(new Particle());
-  }
-
-  function animate() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    particles.forEach((p) => {
-      p.update();
-      p.draw();
-    });
-
-    // Draw faint connections between nearby particles
-    for (let i = 0; i < particles.length; i++) {
-      for (let j = i + 1; j < particles.length; j++) {
-        const dx = particles[i].x - particles[j].x;
-        const dy = particles[i].y - particles[j].y;
-        const dist = Math.sqrt(dx * dx + dy * dy);
-        if (dist < 100) {
-          ctx.beginPath();
-          ctx.moveTo(particles[i].x, particles[i].y);
-          ctx.lineTo(particles[j].x, particles[j].y);
-          ctx.strokeStyle = `rgba(201, 169, 110, ${0.04 * (1 - dist / 100)})`;
-          ctx.lineWidth = 0.5;
-          ctx.stroke();
-        }
-      }
-    }
-
-    animationId = requestAnimationFrame(animate);
-  }
-
-  animate();
-
-  // Track mouse for particle interaction
-  canvas.addEventListener('mousemove', (e) => {
-    const rect = canvas.getBoundingClientRect();
-    mouse.x = e.clientX - rect.left;
-    mouse.y = e.clientY - rect.top;
-  });
-
-  canvas.addEventListener('mouseleave', () => {
-    mouse.x = -1000;
-    mouse.y = -1000;
-  });
-
-  // Regenerate particles on resize
-  window.addEventListener('resize', () => {
-    particles = [];
-    const newCount = Math.min(Math.floor((canvas.width * canvas.height) / 8000), 100);
-    for (let i = 0; i < newCount; i++) {
-      particles.push(new Particle());
-    }
-  });
-})();
-
-// ============================================
-// 3. NAVIGATION SCROLL EFFECT
+// 1. NAVIGATION SCROLL EFFECT
 // ============================================
 (function initNavScroll() {
   const navbar = document.getElementById('navbar');
   if (!navbar) return;
 
-  let lastScroll = 0;
-
   window.addEventListener('scroll', () => {
     const scrollY = window.scrollY;
-    if (scrollY > 80) {
-      navbar.classList.add('scrolled');
-    } else {
-      navbar.classList.remove('scrolled');
-    }
-    lastScroll = scrollY;
+    navbar.classList.toggle('scrolled', scrollY > 60);
   }, { passive: true });
 })();
 
 // ============================================
-// 4. MOBILE HAMBURGER
+// 2. MOBILE HAMBURGER
 // ============================================
 (function initMobileMenu() {
   const hamburger = document.getElementById('hamburger');
@@ -224,9 +37,10 @@ function debounce(fn, delay = 100) {
   if (!hamburger || !overlay) return;
 
   function toggleMenu() {
-    hamburger.classList.toggle('active');
-    overlay.classList.toggle('open');
-    document.body.style.overflow = overlay.classList.contains('open') ? 'hidden' : '';
+    const isOpen = !overlay.classList.contains('open');
+    hamburger.classList.toggle('active', isOpen);
+    overlay.classList.toggle('open', isOpen);
+    document.body.style.overflow = isOpen ? 'hidden' : '';
   }
 
   hamburger.addEventListener('click', toggleMenu);
@@ -239,7 +53,7 @@ function debounce(fn, delay = 100) {
 })();
 
 // ============================================
-// 5. SCROLL REVEAL (Intersection Observer)
+// 3. SCROLL REVEAL (Intersection Observer)
 // ============================================
 (function initReveal() {
   const revealElements = document.querySelectorAll('[data-reveal]');
@@ -249,16 +63,15 @@ function debounce(fn, delay = 100) {
     (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          // For draw animations, we need special handling
-          if (entry.target.dataset.reveal === 'draw') {
-            entry.target.style.transform = 'scaleX(0)';
-            // Force reflow then animate
-            void entry.target.offsetWidth;
-            entry.target.classList.add('revealed');
+          const el = entry.target;
+          if (el.dataset.reveal === 'draw') {
+            el.style.transform = 'scaleX(0)';
+            void el.offsetWidth;
+            el.classList.add('revealed');
           } else {
-            entry.target.classList.add('revealed');
+            el.classList.add('revealed');
           }
-          observer.unobserve(entry.target);
+          observer.unobserve(el);
         }
       });
     },
@@ -272,7 +85,7 @@ function debounce(fn, delay = 100) {
 })();
 
 // ============================================
-// 6. SMOOTH SCROLL FOR ANCHOR LINKS
+// 4. SMOOTH SCROLL FOR ANCHOR LINKS
 // ============================================
 (function initSmoothScroll() {
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
@@ -291,7 +104,21 @@ function debounce(fn, delay = 100) {
 })();
 
 // ============================================
-// 7. PARALLAX EFFECT ON HERO (gentle)
+// 5. SCROLL INDICATOR FADE
+// ============================================
+(function initScrollIndicator() {
+  const indicator = document.getElementById('scrollIndicator');
+  if (!indicator) return;
+
+  window.addEventListener('scroll', () => {
+    const scrollY = window.scrollY;
+    indicator.style.opacity = scrollY > 180 ? '0' : '1';
+    indicator.style.pointerEvents = scrollY > 180 ? 'none' : 'all';
+  }, { passive: true });
+})();
+
+// ============================================
+// 6. PARALLAX EFFECT ON HERO (gentle)
 // ============================================
 (function initParallax() {
   const hero = document.getElementById('hero');
@@ -306,9 +133,9 @@ function debounce(fn, delay = 100) {
         const scrollY = window.scrollY;
         const heroHeight = hero.offsetHeight;
         if (scrollY <= heroHeight) {
-          const offset = scrollY * 0.3;
+          const offset = scrollY * 0.25;
           content.style.transform = `translateY(${offset}px)`;
-          content.style.opacity = 1 - (scrollY / heroHeight) * 0.5;
+          content.style.opacity = Math.max(0, 1 - (scrollY / heroHeight) * 0.4);
         }
         ticking = false;
       });
@@ -318,70 +145,59 @@ function debounce(fn, delay = 100) {
 })();
 
 // ============================================
-// 8. SCROLL INDICATOR FADE
+// 7. VENTURE CARD GLOW FOLLOW (Desktop)
 // ============================================
-(function initScrollIndicator() {
-  const indicator = document.getElementById('scrollIndicator');
-  if (!indicator) return;
-
-  window.addEventListener('scroll', () => {
-    const scrollY = window.scrollY;
-    if (scrollY > 200) {
-      indicator.style.opacity = '0';
-      indicator.style.pointerEvents = 'none';
-    } else {
-      indicator.style.opacity = '1';
-      indicator.style.pointerEvents = 'all';
-    }
-  }, { passive: true });
-})();
-
-// ============================================
-// 9. PAGE LOAD STAGGER ANIMATIONS
-// ============================================
-(function initPageLoad() {
-  window.addEventListener('load', () => {
-    const loadElements = document.querySelectorAll('.hero-content [data-load]');
-
-    loadElements.forEach((el, i) => {
-      setTimeout(() => {
-        if (el.dataset.load === 'draw') {
-          void el.offsetWidth;
-          el.classList.add('revealed');
-        } else {
-          el.classList.add('revealed');
-        }
-      }, 400 + i * 250);
-    });
-  });
-})();
-
-// ============================================
-// 10. VENTURE CARD TILT EFFECT (Desktop)
-// ============================================
-(function initCardTilt() {
-  const cards = document.querySelectorAll('.venture-card-inner');
+(function initCardGlow() {
+  const cards = document.querySelectorAll('.venture-card');
   if (!cards.length) return;
 
   const isMobile = window.matchMedia('(max-width: 768px)').matches;
   if (isMobile) return;
 
   cards.forEach((card) => {
+    let glow = card.querySelector('.venture-card-bg');
+    if (!glow) {
+      glow = document.createElement('div');
+      glow.className = 'venture-card-bg';
+      card.appendChild(glow);
+    }
+
     card.addEventListener('mousemove', (e) => {
       const rect = card.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-      const centerX = rect.width / 2;
-      const centerY = rect.height / 2;
-
-      const rotateX = ((y - centerY) / centerY) * -4;
-      const rotateY = ((x - centerX) / centerX) * 4;
-
-      card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-6px)`;
+      const x = ((e.clientX - rect.left) / rect.width) * 100;
+      const y = ((e.clientY - rect.top) / rect.height) * 100;
+      glow.style.setProperty('--mx', `${x}%`);
+      glow.style.setProperty('--my', `${y}%`);
+      glow.style.opacity = '0.6';
     });
 
     card.addEventListener('mouseleave', () => {
-      card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0)';
+      glow.style.opacity = '0.4';
+    });
+  });
+})();
+
+// ============================================
+// 8. HERO GLOW PARALLAX (Desktop)
+// ============================================
+(function initHeroGlow() {
+  const hero = document.querySelector('.hero');
+  const glows = hero?.querySelectorAll('.hero-glow');
+  if (!hero || !glows?.length) return;
+
+  const isMobile = window.matchMedia('(max-width: 768px)').matches;
+  if (isMobile) return;
+
+  hero.addEventListener('mousemove', (e) => {
+    const rect = hero.getBoundingClientRect();
+    const x = (e.clientX - rect.left) / rect.width;
+    const y = (e.clientY - rect.top) / rect.height;
+
+    glows.forEach((glow, i) => {
+      const speed = 15 + i * 10;
+      const moveX = (x - 0.5) * speed;
+      const moveY = (y - 0.5) * speed;
+      glow.style.transform = `translate(${moveX}px, ${moveY}px)`;
     });
   });
 })();
