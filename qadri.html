@@ -1,0 +1,1815 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>document.documentElement.classList.add('js');</script>
+<title>Shabihul Quadri — Builder of Talkingo, Mangodish &amp; Lunitaa</title>
+<meta name="description" content="Shabihul Quadri — Cairo-based builder. Ten years of e-commerce, apps and applied AI, including Talkingo, Mangodish and Lunitaa.">
+<meta name="theme-color" content="#f1efe8">
+<meta name="color-scheme" content="light">
+<meta name="author" content="Shabihul Quadri">
+<link rel="canonical" href="https://irsha.me/qadri.html">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/icon-32.png">
+<link rel="icon" type="image/png" sizes="180x180" href="assets/icon-180.png">
+<link rel="apple-touch-icon" href="assets/icon-180.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Shabihul Quadri — Builder of Talkingo, Mangodish &amp; Lunitaa">
+<meta property="og:description" content="Ten years of e-commerce, apps and applied AI. Cairo, Egypt.">
+<meta property="og:url" content="https://irsha.me/qadri.html">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/qadri-tokens.css">
+<link rel="preload" as="image" href="assets/portrait.jpg" fetchpriority="high">
+<style>
+/* Hallmark · macrostructure: Long Document (essay spine + plates) · tone: premium-philosophical
+ * theme: studied family DNA (irsha.me) · paper light · classical serif display · cool accent 272
+ * nav: N9 edge-aligned · footer: Ft5 statement · enrichment: E7 portrait plate + drawn SVG figure
+ * Hallmark · pre-emit critique: P5 H5 E5 S5 R4 V4
+ */
+
+/* ── Base ─────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+html, body { overflow-x: clip; }
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 96px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-line-strong) var(--color-paper);
+}
+body {
+  margin: 0;
+  background-color: var(--color-paper);
+  background-image: var(--grad-paper);
+  background-repeat: no-repeat;
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: var(--leading-body);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "liga" 1, "kern" 1;
+}
+/* paper grain — the whole page printed, not rendered */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  pointer-events: none;
+  opacity: 0.032;
+  mix-blend-mode: multiply;
+  background-image: var(--noise);
+  background-size: 160px 160px;
+}
+a { color: inherit; text-decoration: none; }
+p { margin: 0 0 var(--space-5); text-wrap: pretty; }
+h1, h2, h3 { text-wrap: balance; }
+::selection { background: var(--color-accent); color: var(--color-invert-paper); }
+:focus-visible {
+  outline: var(--rule-focus) solid var(--color-accent);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
+}
+
+.shell {
+  width: min(100%, var(--shell));
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+.mono {
+  font-family: var(--font-mono);
+  font-size: var(--text-2xs);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--color-muted);
+}
+
+.skip {
+  position: fixed;
+  top: var(--space-3);
+  left: var(--space-3);
+  z-index: 100;
+  padding: var(--space-3) var(--space-4);
+  background: var(--color-ink);
+  color: var(--color-invert-paper);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  transform: translateY(-200%);
+  transition: transform var(--dur-fast) var(--ease-out);
+}
+.skip:focus-visible { transform: none; }
+
+/* reading progress — one hairline, accent only */
+.progress {
+  position: fixed;
+  inset: 0 0 auto 0;
+  height: 2px;
+  z-index: 90;
+  pointer-events: none;
+}
+.progress span {
+  display: block;
+  height: 100%;
+  background: var(--color-accent);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 90ms linear;
+}
+
+/* ── Header · N9 edge-aligned ─────────────────────────────── */
+.site-head {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background: var(--color-paper);
+  border-bottom: var(--rule-hair) solid transparent;
+  transition: border-color var(--dur-slow) var(--ease-out), background-color var(--dur-slow) var(--ease-out), backdrop-filter var(--dur-slow) var(--ease-out);
+}
+.site-head.is-stuck {
+  background-color: var(--color-paper-glass);
+  -webkit-backdrop-filter: blur(14px) saturate(1.06);
+  backdrop-filter: blur(14px) saturate(1.06);
+  border-bottom-color: var(--color-line);
+}
+.head-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-6);
+  min-height: 80px;
+  transition: min-height var(--dur-slow) var(--ease-out);
+}
+.site-head.is-stuck .head-inner { min-height: 68px; }
+.wordmark {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-display);
+  font-size: clamp(19px, 2vw, 24px);
+  letter-spacing: var(--tracking-tight);
+  line-height: 1;
+  white-space: nowrap;
+  transition: opacity var(--dur-base) var(--ease-out);
+}
+.wordmark-avatar {
+  width: 34px;
+  height: 34px;
+  flex: none;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: 50% 26%;
+  border: 1px solid var(--color-line);
+  filter: grayscale(1) contrast(1.06);
+  transform: scale(0.25);
+  opacity: 0;
+  margin-right: -34px;
+  transition: transform 360ms var(--ease-out), opacity 260ms var(--ease-out), margin-right 360ms var(--ease-out), border-color var(--dur-base) var(--ease-out);
+}
+.site-head.is-stuck .wordmark-avatar {
+  transform: scale(1);
+  opacity: 1;
+  margin-right: var(--space-3);
+  border-color: var(--color-line-strong);
+}
+.wordmark:hover .wordmark-avatar { border-color: var(--color-accent); }
+.wordmark-name span { color: var(--color-accent); transition: opacity var(--dur-base) var(--ease-out); }
+.wordmark:hover .wordmark-name span { opacity: 0.55; }
+.head-nav {
+  display: flex;
+  align-items: center;
+  gap: clamp(var(--space-4), 2.6vw, var(--space-7));
+  font-size: var(--text-xs);
+  letter-spacing: 0.04em;
+}
+.head-nav a {
+  position: relative;
+  color: var(--color-ink-2);
+  white-space: nowrap;
+  padding-block: var(--space-2);
+  transition: color var(--dur-base) var(--ease-out);
+}
+.head-nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: var(--rule-hair);
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform var(--dur-base) var(--ease-out), opacity var(--dur-base) var(--ease-out);
+}
+.head-nav a:hover { color: var(--color-accent); }
+.head-nav a:hover::after { transform: scaleX(1); }
+.head-nav .head-cta { color: var(--color-ink); padding-bottom: var(--space-2); }
+.head-nav .head-cta::after {
+  background: var(--color-line-strong);
+  transform: scaleX(1);
+  transform-origin: right center;
+}
+.head-nav .head-cta:hover { color: var(--color-accent); }
+.head-nav .head-cta:hover::after { background: var(--color-accent); transform-origin: left center; }
+
+/* ── Hero ─────────────────────────────────────────────────── */
+.hero {
+  padding-block: clamp(56px, 7vw, 112px) clamp(40px, 4vw, 64px);
+}
+.hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.16fr) minmax(0, 0.84fr);
+  column-gap: clamp(var(--space-7), 7vw, var(--space-10));
+  row-gap: clamp(var(--space-7), 5vw, var(--space-9));
+  align-items: start;
+}
+.hero-main { display: grid; gap: clamp(var(--space-6), 3.4vw, var(--space-8)); }
+.hero-kicker {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin: 0;
+}
+.hero-kicker i {
+  display: block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  flex: none;
+  animation: breathe 4.2s var(--ease-in-out) infinite;
+}
+@keyframes breathe {
+  0%, 100% { opacity: 1; transform: scale(1); box-shadow: 0 0 0 0 var(--color-accent-halo); }
+  50% { opacity: 0.65; transform: scale(0.86); box-shadow: 0 0 0 6px transparent; }
+}
+.hero h1 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-style: normal;
+  font-size: clamp(50px, 8.6vw, 138px);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-display);
+  overflow-wrap: anywhere;
+  min-width: 0;
+  max-width: 12ch;
+}
+.hero h1 em {
+  font-style: normal;
+  color: var(--color-accent);
+}
+.hero .lede {
+  max-width: 46ch;
+  font-size: clamp(var(--text-md), 1.5vw, var(--text-lg));
+  line-height: 1.66;
+  color: var(--color-ink-2);
+  margin: 0;
+}
+.hero .lede strong { color: var(--color-ink); font-weight: 500; }
+.hero-foot {
+  grid-column: 1;
+  display: grid;
+  gap: var(--space-5);
+  border-top: var(--rule-hair) solid var(--color-line);
+  padding-top: var(--space-5);
+}
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4) var(--space-7);
+  align-items: center;
+}
+.hero-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2) var(--space-5);
+  margin: 0;
+  color: var(--color-muted);
+}
+.hero-meta span { display: inline-flex; align-items: center; gap: var(--space-5); }
+.hero-meta span + span::before {
+  content: "";
+  width: 16px;
+  height: 1px;
+  background: var(--color-line-strong);
+  flex: none;
+}
+.link-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  padding-bottom: var(--space-2);
+  border-bottom: var(--rule-hair) solid var(--color-ink);
+  white-space: nowrap;
+  transition: border-color var(--dur-base) var(--ease-out), color var(--dur-base) var(--ease-out);
+}
+.link-cta svg { width: 12px; height: 12px; transition: transform var(--dur-base) var(--ease-out); }
+.link-cta:hover { color: var(--color-accent); border-bottom-color: var(--color-accent); }
+.link-cta:hover svg { transform: translate(3px, -3px); }
+.link-quiet {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+  white-space: nowrap;
+  border-bottom: var(--rule-hair) solid transparent;
+  padding-bottom: var(--space-1);
+  transition: color var(--dur-base) var(--ease-out), border-color var(--dur-base) var(--ease-out);
+}
+.link-quiet:hover { color: var(--color-ink); border-bottom-color: var(--color-line-strong); }
+
+/* ── Portrait plate ───────────────────────────────────────── */
+.portrait {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  justify-self: end;
+  align-self: center;
+  position: relative;
+  margin: 0;
+  width: min(100%, 396px);
+}
+.portrait::before,
+.portrait::after {
+  content: "";
+  position: absolute;
+  width: 46px;
+  height: 46px;
+  pointer-events: none;
+  z-index: 2;
+  transition: opacity var(--dur-slow) var(--ease-out);
+  opacity: 0.75;
+}
+.portrait::before {
+  top: -14px;
+  right: -14px;
+  border-top: var(--rule-hair) solid var(--color-line-strong);
+  border-right: var(--rule-hair) solid var(--color-line-strong);
+}
+.portrait::after {
+  bottom: 34px;
+  left: -14px;
+  border-bottom: var(--rule-hair) solid var(--color-line-strong);
+  border-left: var(--rule-hair) solid var(--color-line-strong);
+}
+.portrait-frame {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 4 / 5;
+  background: var(--color-paper-sunk);
+  border: var(--rule-hair) solid var(--color-line);
+  isolation: isolate;
+  transition: border-color var(--dur-slow) var(--ease-out), box-shadow var(--dur-slow) var(--ease-out);
+  animation: plateIn 1100ms var(--ease-out) both;
+}
+@keyframes plateIn {
+  from { clip-path: inset(0 0 100% 0); }
+  to { clip-path: inset(0 0 0 0); }
+}
+.portrait-frame img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 32%;
+  filter: grayscale(1) contrast(1.06) brightness(1.02);
+  transform: scale(1.008);
+  transition: filter var(--dur-slow) var(--ease-out), transform 1400ms var(--ease-out), opacity 900ms var(--ease-out);
+}
+.js .portrait-frame img { opacity: 0; }
+.js .portrait-frame img.is-loaded { opacity: 1; }
+/* a whisper of blue laid over the greys */
+.portrait-frame::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: var(--color-plate-tint);
+  mix-blend-mode: color;
+  opacity: 0.75;
+}
+.portrait-spot {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  opacity: 0;
+  background: radial-gradient(240px circle at var(--mx, 50%) var(--my, 40%), var(--color-glow), transparent 68%);
+  mix-blend-mode: soft-light;
+  transition: opacity var(--dur-slow) var(--ease-out);
+}
+.portrait-frame .grain {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+  background-image: var(--noise);
+  background-size: 140px 140px;
+  opacity: 0.06;
+  mix-blend-mode: multiply;
+}
+.portrait-fallback {
+  display: none;
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  place-items: center;
+  background: var(--color-paper-sunk);
+}
+.portrait-fallback span {
+  font-family: var(--font-display);
+  font-size: 104px;
+  letter-spacing: -0.04em;
+  color: var(--color-line-strong);
+}
+.portrait.is-empty img,
+.portrait.is-empty .portrait-frame::after { display: none; }
+.portrait.is-empty .portrait-fallback { display: grid; }
+.portrait figcaption {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: var(--space-4);
+  margin-top: var(--space-4);
+  font-family: var(--font-mono);
+  font-size: var(--text-2xs);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+  transition: color var(--dur-slow) var(--ease-out);
+}
+.portrait figcaption span:last-child { color: var(--color-line-strong); }
+
+@media (hover: hover) and (pointer: fine) {
+  .portrait-frame:hover { border-color: var(--color-accent-edge); box-shadow: var(--shadow-plate); }
+  .portrait-frame:hover img { filter: grayscale(0.78) contrast(1.08) brightness(1.02); transform: scale(1.038); }
+  .portrait-frame:hover .portrait-spot { opacity: 1; }
+  .portrait-frame:hover ~ figcaption { color: var(--color-ink-2); }
+  .portrait:hover::before,
+  .portrait:hover::after { opacity: 1; }
+}
+
+/* ── Section rhythm ───────────────────────────────────────── */
+.section { padding-block: clamp(var(--space-9), 10vw, var(--space-11)); }
+.section + .section { border-top: var(--rule-hair) solid var(--color-line); }
+.section-head {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: clamp(var(--space-5), 6vw, var(--space-9));
+  align-items: end;
+  margin-bottom: clamp(var(--space-7), 6vw, var(--space-9));
+}
+.section-head h2 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-style: normal;
+  font-size: var(--text-display-s);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-display);
+  overflow-wrap: anywhere;
+  min-width: 0;
+}
+.section-head p {
+  margin: 0;
+  max-width: 38ch;
+  color: var(--color-muted);
+  font-size: var(--text-sm);
+  line-height: 1.78;
+}
+
+/* ── Preface · Long Document prose ────────────────────────── */
+.preface { padding-block: clamp(var(--space-7), 6vw, var(--space-9)) clamp(var(--space-9), 11vw, var(--space-11)); }
+.preface-inner {
+  max-width: min(58ch, 100%);
+  margin-left: clamp(0px, 12vw, 200px);
+  margin-right: 0;
+}
+.preface h2 {
+  margin: clamp(var(--space-8), 7vw, var(--space-9)) 0 var(--space-4);
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-style: normal;
+  font-size: var(--text-xl);
+  line-height: 1.2;
+  letter-spacing: var(--tracking-tight);
+  color: var(--color-ink);
+}
+.preface h2:first-child { margin-top: 0; }
+.preface p { color: var(--color-body); font-size: var(--text-md); max-width: 58ch; }
+.pull {
+  margin: clamp(var(--space-8), 7vw, var(--space-9)) 0;
+  padding: 0 0 0 clamp(var(--space-5), 3vw, var(--space-7));
+  border-left: var(--rule-focus) solid var(--color-accent);
+  font-family: var(--font-display);
+  font-style: normal;
+  font-size: var(--text-2xl);
+  line-height: 1.16;
+  letter-spacing: var(--tracking-tight);
+  color: var(--color-ink);
+  max-width: 30ch;
+}
+
+/* ── Work ─────────────────────────────────────────────────── */
+.work-list { list-style: none; margin: 0; padding: 0; }
+.work {
+  display: grid;
+  grid-template-columns: minmax(0, 1.04fr) minmax(0, 0.96fr);
+  gap: clamp(var(--space-6), 6vw, var(--space-9));
+  align-items: center;
+  padding-block: clamp(var(--space-7), 6vw, var(--space-9));
+  border-top: var(--rule-hair) solid var(--color-line);
+}
+.work:first-child { border-top: 0; padding-top: 0; }
+.work:nth-child(even) .work-copy { order: 2; }
+.work:nth-child(even) .specimen { order: 1; }
+.work-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2) var(--space-5);
+  font-family: var(--font-mono);
+  font-size: var(--text-2xs);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+  margin-bottom: var(--space-5);
+}
+.work-meta span:first-child { color: var(--color-accent); }
+.work-copy h3 {
+  margin: 0 0 var(--space-4);
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-style: normal;
+  font-size: var(--text-3xl);
+  line-height: 1.02;
+  letter-spacing: var(--tracking-display);
+  max-width: 18ch;
+}
+.work-copy > p { color: var(--color-body); font-size: var(--text-base); line-height: 1.78; max-width: 52ch; }
+.work-facts {
+  list-style: none;
+  margin: var(--space-6) 0 0;
+  padding: 0;
+  border-top: var(--rule-hair) solid var(--color-line);
+  max-width: 54ch;
+}
+.work-facts li {
+  display: grid;
+  grid-template-columns: 18px minmax(0, 1fr);
+  gap: var(--space-3);
+  padding: var(--space-3) 0;
+  border-bottom: var(--rule-hair) solid var(--color-line);
+  font-size: var(--text-sm);
+  line-height: 1.7;
+  color: var(--color-body);
+}
+.work-facts li::before {
+  content: "";
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  margin-top: 0.72em;
+  transition: transform var(--dur-base) var(--ease-out);
+}
+.work-facts li:hover::before { transform: scale(1.6); }
+
+/* ── Plates (specimens) ───────────────────────────────────── */
+.specimen {
+  position: relative;
+  margin: 0;
+  min-height: clamp(320px, 34vw, 452px);
+  background-color: var(--color-paper-sunk);
+  background-image: var(--grad-plate);
+  border: var(--rule-hair) solid var(--color-line);
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  isolation: isolate;
+  transition: border-color var(--dur-slow) var(--ease-out), transform var(--dur-slow) var(--ease-out), box-shadow var(--dur-slow) var(--ease-out);
+}
+.specimen::before {
+  content: "";
+  position: absolute;
+  inset: var(--space-4);
+  border: var(--rule-hair) solid var(--color-line);
+  pointer-events: none;
+  opacity: 0.7;
+  z-index: 2;
+}
+.specimen figcaption {
+  position: absolute;
+  left: calc(var(--space-4) + var(--space-3));
+  right: calc(var(--space-4) + var(--space-3));
+  bottom: calc(var(--space-4) + var(--space-2));
+  z-index: 4;
+  font-family: var(--font-mono);
+  font-size: var(--text-2xs);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+  transition: color var(--dur-slow) var(--ease-out);
+}
+@media (hover: hover) and (pointer: fine) {
+  .specimen:hover { border-color: var(--color-accent-edge); transform: translateY(-3px); box-shadow: var(--shadow-plate); }
+  .specimen:hover::before { border-color: var(--color-accent-edge); }
+  .specimen:hover figcaption { color: var(--color-ink-2); }
+}
+
+/* Talkingo — a correction, mid-conversation */
+.chat {
+  width: 100%;
+  max-width: 430px;
+  padding-inline: var(--space-6);
+  display: grid;
+  gap: var(--space-4);
+}
+.chat-who {
+  display: block;
+  margin-bottom: var(--space-2);
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+}
+.chat-line,
+.chat-fix {
+  margin: 0;
+  font-family: var(--font-display);
+  line-height: 1.24;
+  letter-spacing: var(--tracking-tight);
+}
+.chat-line { font-size: clamp(20px, 2.2vw, 26px); color: var(--color-muted); }
+.chat-fix { font-size: clamp(22px, 2.6vw, 32px); color: var(--color-ink); }
+.chat-fix em {
+  font-style: normal;
+  color: var(--color-accent);
+  border-bottom: 1px solid var(--color-accent-edge);
+}
+.chat-rule { display: block; height: 1px; background: var(--color-line); }
+.specimen:hover .chat-fix em { border-bottom-color: var(--color-accent); }
+
+/* Mangodish — a ticket from the pass */
+.ticket {
+  width: min(82%, 330px);
+  padding: var(--space-5) var(--space-5) var(--space-4);
+  background: var(--color-paper-raised);
+  border: 1px solid var(--color-line);
+  box-shadow: var(--shadow-lift);
+  transform: rotate(-1.2deg);
+  transition: transform 620ms var(--ease-out), box-shadow 620ms var(--ease-out);
+}
+.specimen:hover .ticket { transform: rotate(0deg) translateY(-2px); box-shadow: var(--shadow-plate); }
+.ticket-top,
+.ticket-foot {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-3);
+  font-family: var(--font-mono);
+  font-size: 8.5px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+}
+.ticket-top { padding-bottom: var(--space-3); border-bottom: 1px dashed var(--color-line-strong); }
+.ticket-row {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding: var(--space-2) 0;
+  border-bottom: 1px solid var(--color-line);
+  font-size: var(--text-xs);
+  color: var(--color-ink-2);
+}
+.ticket-foot { margin-top: var(--space-4); padding-top: var(--space-3); border-top: 1px dashed var(--color-line-strong); }
+.ticket-foot b { font-weight: 400; color: var(--color-accent); }
+
+/* Lunitaa — a product card */
+.product { width: min(80%, 320px); display: grid; gap: var(--space-4); }
+.product-brand {
+  font-family: var(--font-display);
+  font-size: clamp(34px, 4vw, 46px);
+  line-height: 0.9;
+  letter-spacing: -0.05em;
+}
+.product-brand i { font-style: normal; color: var(--color-accent); }
+.product-name {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+}
+.product-sizes { display: flex; gap: var(--space-2); }
+.product-sizes span {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border: 1px solid var(--color-line-strong);
+  font-family: var(--font-mono);
+  font-size: 9px;
+  color: var(--color-ink-2);
+  transition: border-color var(--dur-base) var(--ease-out), color var(--dur-base) var(--ease-out), background-color var(--dur-base) var(--ease-out);
+}
+.product-sizes span:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+  background-color: var(--color-accent-wash);
+}
+.product-buy {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-3);
+  padding-top: var(--space-3);
+  border-top: 1px solid var(--color-line-strong);
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-ink);
+}
+
+#studio { scroll-margin-top: 100px; }
+
+/* ── Studio plate · drawn instrument ──────────────────────── */
+.specimen--plate { display: block; }
+.plate {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: var(--space-5);
+}
+.plate-svg { width: 100%; height: 100%; display: block; }
+
+.plate-svg .cross line {
+  stroke: var(--color-ink);
+  stroke-width: 1;
+  stroke-dasharray: 2 8;
+  opacity: 0.16;
+}
+.plate-svg .ticks circle {
+  fill: none;
+  stroke: var(--color-ink);
+  stroke-width: 1;
+  stroke-dasharray: 0.8 7;
+  opacity: 0.32;
+  transform-origin: 300px 300px;
+  animation: slowSpin 140s linear infinite;
+}
+@keyframes slowSpin { to { transform: rotate(360deg); } }
+.plate-svg .band {
+  fill: none;
+  stroke: var(--color-ink);
+  stroke-width: 1;
+  stroke-dasharray: 1 5;
+  opacity: 0.18;
+}
+.plate-svg .edge {
+  fill: none;
+  stroke: var(--color-ink);
+  stroke-width: 1;
+  opacity: 0.1;
+}
+.plate-caption {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  fill: var(--color-muted);
+}
+.plate-svg .orbit {
+  fill: none;
+  stroke: var(--color-ink);
+  stroke-width: 1;
+  stroke-dasharray: 100;
+  stroke-dashoffset: 0;
+  opacity: 0.42;
+  transition: stroke var(--dur-slow) var(--ease-out), opacity var(--dur-slow) var(--ease-out);
+}
+.plate-svg .spoke {
+  stroke: var(--color-ink);
+  stroke-width: 1;
+  stroke-dasharray: 2 6;
+  opacity: 0.2;
+  transition: stroke var(--dur-slow) var(--ease-out), opacity var(--dur-slow) var(--ease-out);
+}
+.plate-svg .core-halo { fill: var(--color-accent-wash); }
+.plate-svg .core-dot { fill: var(--color-ink); transition: fill var(--dur-slow) var(--ease-out); }
+.plate-svg .dust circle { fill: var(--color-ink); opacity: 0.24; }
+
+.plate-node { cursor: default; }
+.node-dot {
+  fill: var(--color-ink);
+  transform-box: fill-box;
+  transform-origin: center;
+  transition: transform var(--dur-base) var(--ease-out), fill var(--dur-base) var(--ease-out);
+}
+.node-halo {
+  fill: var(--color-accent-halo);
+  opacity: 0;
+  transform-box: fill-box;
+  transform-origin: center;
+  transition: opacity var(--dur-base) var(--ease-out);
+}
+.node-label {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  letter-spacing: 1.7px;
+  text-transform: uppercase;
+  fill: var(--color-ink);
+  transition: fill var(--dur-base) var(--ease-out);
+}
+.node-sub {
+  font-family: var(--font-mono);
+  font-size: 8.5px;
+  letter-spacing: 1.1px;
+  text-transform: uppercase;
+  fill: var(--color-muted);
+}
+.core-label {
+  font-family: var(--font-mono);
+  font-size: 8.5px;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  fill: var(--color-muted);
+}
+.plate-node:hover .node-dot { fill: var(--color-accent); transform: scale(1.55); }
+.plate-node:hover .node-halo { opacity: 1; }
+.plate-node:hover .node-label { fill: var(--color-accent); }
+
+.plate[data-lit] .core-dot { fill: var(--color-accent); }
+.plate[data-lit="1"] .orbit-1,
+.plate[data-lit="2"] .orbit-2,
+.plate[data-lit="3"] .orbit-3 {
+  stroke: var(--color-accent);
+  opacity: 1;
+  animation: orbitDraw 1100ms var(--ease-out);
+}
+.plate[data-lit="1"] .spoke-1,
+.plate[data-lit="2"] .spoke-2,
+.plate[data-lit="3"] .spoke-3 {
+  stroke: var(--color-accent);
+  opacity: 0.8;
+}
+@keyframes orbitDraw {
+  from { stroke-dashoffset: 100; }
+  to { stroke-dashoffset: 0; }
+}
+
+/* ── Practice ─────────────────────────────────────────────── */
+.practice-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  border-top: var(--rule-hair) solid var(--color-line);
+}
+.practice-item {
+  padding: var(--space-6) var(--space-6) var(--space-7) 0;
+  border-bottom: var(--rule-hair) solid var(--color-line);
+  min-height: 218px;
+  transition: background-color var(--dur-slow) var(--ease-out);
+}
+.practice-item:nth-child(odd) { border-right: var(--rule-hair) solid var(--color-line); }
+.practice-item:nth-child(even) { padding-left: var(--space-6); }
+.practice-no {
+  font-family: var(--font-mono);
+  font-size: var(--text-2xs);
+  letter-spacing: 0.1em;
+  color: var(--color-muted);
+  transition: color var(--dur-base) var(--ease-out);
+}
+.practice-item h3 {
+  margin: var(--space-6) 0 var(--space-3);
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-style: normal;
+  font-size: var(--text-xl);
+  line-height: 1.06;
+  letter-spacing: var(--tracking-tight);
+}
+.practice-item p {
+  margin: 0;
+  max-width: 38ch;
+  font-size: var(--text-sm);
+  line-height: 1.78;
+  color: var(--color-body);
+}
+@media (hover: hover) and (pointer: fine) {
+  .practice-item:hover { background-color: var(--color-accent-wash); }
+  .practice-item:hover .practice-no { color: var(--color-accent); }
+}
+
+/* ── Background ───────────────────────────────────────────── */
+.bg-body {
+  max-width: 60ch;
+  margin-left: clamp(0px, 8vw, 120px);
+}
+.bg-body p { font-size: var(--text-md); color: var(--color-body); }
+.bg-note {
+  margin: var(--space-7) 0 0;
+  padding-top: var(--space-4);
+  border-top: var(--rule-hair) solid var(--color-line);
+}
+.bg-link { margin: var(--space-5) 0 0; }
+
+/* ── Conversation ─────────────────────────────────────────── */
+.conversation { padding-block: clamp(var(--space-9), 11vw, var(--space-11)) clamp(var(--space-8), 7vw, var(--space-9)); }
+.conv-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.06fr) minmax(0, 0.7fr);
+  gap: clamp(var(--space-7), 7vw, var(--space-10));
+  align-items: start;
+}
+.conv-copy h2 {
+  margin: 0 0 var(--space-5);
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-style: normal;
+  font-size: var(--text-display-s);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-display);
+  max-width: 20ch;
+  overflow-wrap: anywhere;
+}
+.conv-copy > p {
+  max-width: 46ch;
+  color: var(--color-body);
+  font-size: var(--text-base);
+  margin-bottom: var(--space-7);
+}
+
+form { margin: 0; }
+.field {
+  position: relative;
+  display: grid;
+  gap: var(--space-2);
+  padding-block: var(--space-5) var(--space-3);
+  border-bottom: var(--rule-hair) solid var(--color-line-strong);
+  transition: border-color var(--dur-base) var(--ease-out);
+}
+.field::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 2px;
+  background: var(--color-accent);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 420ms var(--ease-out);
+}
+.field:focus-within::after { transform: scaleX(1); }
+.field label {
+  font-family: var(--font-mono);
+  font-size: var(--text-2xs);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+  transition: color var(--dur-base) var(--ease-out);
+}
+.field:focus-within label { color: var(--color-accent); }
+.field input,
+.field textarea {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  width: 100%;
+  padding: var(--space-2) 0 var(--space-3);
+  font-family: var(--font-body);
+  font-size: var(--text-md);
+  line-height: 1.5;
+  color: var(--color-ink);
+  resize: vertical;
+}
+.field textarea { min-height: 120px; }
+.field input::placeholder,
+.field textarea::placeholder { color: var(--color-muted); opacity: 0.62; transition: opacity var(--dur-base) var(--ease-out); }
+.field:focus-within input::placeholder,
+.field:focus-within textarea::placeholder { opacity: 0.35; }
+.field input:focus-visible,
+.field textarea:focus-visible { outline: none; }
+.hp { position: absolute; left: -9999px; opacity: 0; height: 0; width: 0; }
+
+.submit {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-5);
+  margin-top: var(--space-7);
+  padding: var(--space-4) var(--space-6);
+  border: var(--rule-hair) solid var(--color-ink);
+  background: var(--color-ink);
+  color: var(--color-paper);
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background-color var(--dur-base) var(--ease-out), border-color var(--dur-base) var(--ease-out), transform var(--dur-fast) var(--ease-out), opacity var(--dur-base);
+}
+.submit svg { width: 12px; height: 12px; transition: transform var(--dur-base) var(--ease-out); }
+.submit:hover { background-color: var(--color-accent); border-color: var(--color-accent); box-shadow: 0 12px 30px var(--color-accent-halo); }
+.submit:hover svg { transform: translate(3px, -3px); }
+.submit:active { transform: translateY(1px); }
+.submit[disabled] { opacity: 0.55; cursor: not-allowed; transform: none; }
+.form-note {
+  margin: var(--space-5) 0 0;
+  font-family: var(--font-mono);
+  font-size: var(--text-2xs);
+  letter-spacing: 0.06em;
+  color: var(--color-muted);
+}
+.form-note a { border-bottom: var(--rule-hair) solid var(--color-line-strong); transition: color var(--dur-base), border-color var(--dur-base); }
+.form-note a:hover { color: var(--color-accent); border-bottom-color: var(--color-accent); }
+.form-error {
+  margin: var(--space-5) 0 0;
+  font-size: var(--text-sm);
+  color: var(--color-alert);
+}
+.form-error:empty { display: none; }
+.form-done { border-top: var(--rule-hair) solid var(--color-line); padding-top: var(--space-6); }
+.form-done h3 {
+  margin: 0 0 var(--space-4);
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-style: normal;
+  font-size: var(--text-2xl);
+  line-height: 1.1;
+  letter-spacing: var(--tracking-tight);
+}
+.form-done p { color: var(--color-body); max-width: 44ch; margin: 0; }
+
+.conv-aside { border-top: var(--rule-hair) solid var(--color-line-strong); padding-top: var(--space-5); }
+.conv-aside dl { margin: 0; }
+.conv-aside div {
+  display: grid;
+  grid-template-columns: minmax(0, 86px) minmax(0, 1fr);
+  gap: var(--space-4);
+  padding-block: var(--space-4);
+  border-bottom: var(--rule-hair) solid var(--color-line);
+}
+.conv-aside dt {
+  font-family: var(--font-mono);
+  font-size: var(--text-2xs);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+  padding-top: 3px;
+}
+.conv-aside dd { margin: 0; font-size: var(--text-sm); line-height: 1.65; color: var(--color-ink-2); }
+
+/* ── Footer · indigo field (irsha.me/digital) ─────────────── */
+.site-foot {
+  position: relative;
+  overflow: hidden;
+  color: var(--color-paper);
+  background-color: var(--color-footer-3);
+  background-image: var(--grad-footer);
+  padding-block: clamp(48px, 6vw, 80px) clamp(26px, 3vw, 34px);
+}
+.site-foot::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(78% 55% at 84% -14%, var(--color-glow), transparent 72%);
+}
+.foot-wm {
+  position: absolute;
+  left: -2vw;
+  bottom: -0.46em;
+  z-index: 0;
+  font-family: var(--font-display);
+  font-size: clamp(104px, 21vw, 300px);
+  line-height: 0.78;
+  letter-spacing: -0.06em;
+  color: var(--color-watermark);
+  white-space: nowrap;
+  pointer-events: none;
+  user-select: none;
+}
+.foot-wm b { font-weight: 400; color: var(--color-watermark-accent); }
+.foot-inner { position: relative; z-index: 1; }
+.foot-line {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-style: normal;
+  font-size: clamp(32px, 5vw, 72px);
+  line-height: 1;
+  letter-spacing: var(--tracking-display);
+  max-width: 16ch;
+  overflow-wrap: anywhere;
+}
+.foot-line em { font-style: normal; color: var(--color-invert-accent); }
+.foot-top {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: var(--space-6) clamp(var(--space-7), 5vw, var(--space-9));
+  align-items: end;
+  padding-bottom: clamp(var(--space-6), 4vw, var(--space-7));
+  border-bottom: 1px solid var(--color-invert-line);
+}
+.foot-links { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: var(--space-3) var(--space-6); max-width: 440px; }
+.foot-links a {
+  position: relative;
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-invert-body);
+  padding-bottom: var(--space-1);
+  transition: color var(--dur-base) var(--ease-out);
+}
+.foot-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: var(--rule-hair);
+  background: var(--color-invert-accent);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform var(--dur-base) var(--ease-out);
+}
+.foot-links a:hover { color: var(--color-invert-paper); }
+.foot-links a:hover::after { transform: scaleX(1); }
+.foot-bottom {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-3) var(--space-6);
+  flex-wrap: wrap;
+  padding-top: var(--space-5);
+  font-family: var(--font-mono);
+  font-size: var(--text-2xs);
+  letter-spacing: 0.05em;
+  color: var(--color-invert-muted);
+}
+.site-foot :focus-visible { outline-color: var(--color-invert-accent); }
+
+/* ── Reveal ───────────────────────────────────────────────── */
+.js .reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity var(--dur-reveal) var(--ease-out), transform var(--dur-reveal) var(--ease-out);
+  transition-delay: calc(var(--i, 0) * 60ms);
+}
+.js .reveal.is-in { opacity: 1; transform: none; }
+
+/* ── Breakpoints ──────────────────────────────────────────── */
+@media (max-width: 1023px) {
+  .hero-grid { grid-template-columns: minmax(0, 1fr); }
+  .hero-main { order: 1; }
+  .hero-foot { order: 2; grid-column: 1; }
+  .portrait { order: 3; grid-column: 1; grid-row: auto; justify-self: start; width: min(100%, 420px); margin-top: var(--space-3); }
+  .portrait::before { top: -10px; right: -10px; width: 34px; height: 34px; }
+  .portrait::after { bottom: 30px; left: -10px; width: 34px; height: 34px; }
+}
+@media (max-width: 900px) {
+  .section-head,
+  .conv-grid { grid-template-columns: minmax(0, 1fr); }
+  .section-head { gap: var(--space-4); align-items: start; }
+  .section-head p { max-width: 52ch; }
+  .work { grid-template-columns: minmax(0, 1fr); gap: var(--space-6); }
+  .work:nth-child(even) .work-copy { order: 1; }
+  .work:nth-child(even) .specimen { order: 2; }
+  .specimen { min-height: 340px; }
+  .preface-inner { margin-left: 0; max-width: 100%; }
+  .practice-item { min-height: 0; padding-block: var(--space-5) var(--space-6); }
+  .foot-top { grid-template-columns: minmax(0, 1fr); gap: var(--space-6); }
+  .foot-links { justify-content: flex-start; }
+  .foot-wm { font-size: clamp(84px, 24vw, 190px); bottom: -0.5em; }
+}
+@media (max-width: 720px) {
+  .head-inner { min-height: 68px; gap: var(--space-4); }
+  .site-head.is-stuck .head-inner { min-height: 62px; }
+  .head-nav a:not(.head-cta) { display: none; }
+  .hero h1 { max-width: 100%; }
+  .practice-grid { grid-template-columns: minmax(0, 1fr); }
+  .practice-item,
+  .practice-item:nth-child(even) { padding-left: 0; padding-right: 0; border-right: 0; }
+  .practice-item h3 { margin-top: var(--space-5); }
+  .submit { width: 100%; justify-content: space-between; }
+  .conv-aside div { grid-template-columns: minmax(0, 78px) minmax(0, 1fr); }
+  .node-sub { display: none; }
+  .node-label { font-size: 20px; }
+}
+@media (max-width: 420px) {
+  .hero-kicker .mono { letter-spacing: 0.08em; }
+  .work-meta { gap: var(--space-1) var(--space-3); }
+  .reg { font-size: 19px; }
+  .foot-line { max-width: 12ch; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .js .reveal { opacity: 1; transform: none; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@media print {
+  .site-head, .site-foot, .conversation, .skip, .hero-actions, .portrait-spot { display: none; }
+  body { background: #fff; color: #000; }
+  body::after { display: none; }
+  .section, .preface { padding-block: 24px; }
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="progress" aria-hidden="true"><span id="progressBar"></span></div>
+
+<header class="site-head" id="siteHead">
+  <div class="shell head-inner">
+    <a class="wordmark" href="#top">
+      <img class="wordmark-avatar" src="assets/avatar.png" alt="" width="96" height="96" aria-hidden="true">
+      <span class="wordmark-name">Shabihul Quadri<span>.</span></span>
+    </a>
+    <nav class="head-nav" aria-label="Primary">
+      <a href="index.html">Irsha Global &#8599;</a>
+      <a href="#work">Work</a>
+      <a href="#studio">Studio</a>
+      <a href="#practice">Practice</a>
+      <a class="head-cta" href="#conversation">Book a conversation</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <span id="top"></span>
+
+  <section class="hero shell" aria-labelledby="hero-title">
+    <div class="hero-grid">
+      <div class="hero-main">
+        <p class="hero-kicker mono"><i aria-hidden="true"></i>Cairo, Egypt — ten years building — open to select work</p>
+        <h1 id="hero-title">Language is the last <em>interface.</em></h1>
+        <p class="lede">
+          Ten years of shipping the things people meet first: storefronts, apps, and now AI that
+          talks back. I build and run <strong>Talkingo</strong>, <strong>Mangodish</strong> and
+          <strong>Lunitaa</strong> — and take on a few outside projects each year.
+        </p>
+      </div>
+
+      <figure class="portrait" id="portrait">
+        <div class="portrait-frame">
+          <img id="portraitImg" src="assets/portrait.jpg" alt="Shabihul Quadri, photographed on the Al Azhar campus in Cairo" width="900" height="913" decoding="async" fetchpriority="high">
+          <span class="portrait-spot" aria-hidden="true"></span>
+          <span class="grain" aria-hidden="true"></span>
+          <div class="portrait-fallback" aria-hidden="true"><span>SQ</span></div>
+        </div>
+        <figcaption>
+          <span>Cairo · Al Azhar, 2026</span>
+          <span>Plate 01</span>
+        </figcaption>
+      </figure>
+
+      <div class="hero-foot">
+        <div class="hero-actions">
+          <a class="link-cta" href="#conversation">
+            Book a conversation
+            <svg viewBox="0 0 12 12" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.2">
+              <path d="M2.5 9.5 9.5 2.5M4 2.5h5.5V8"/>
+            </svg>
+          </a>
+          <a class="link-quiet" href="#background">Curriculum vitae</a>
+        </div>
+        <p class="hero-meta mono">
+          <span>Ten years building</span>
+          <span>Three ventures</span>
+          <span>Commerce · Apps · AI</span>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="preface shell" aria-label="Preface">
+    <div class="preface-inner reveal">
+      <h2>On building.</h2>
+      <p>
+        Ten years of it, mostly on the commercial web: storefronts, catalogues, checkouts — the
+        unglamorous plumbing that has to work on a bad phone, on a bad signal, at the end of a long
+        day. Then apps. Then models that answer back.
+      </p>
+
+      <h2>On language.</h2>
+      <p>
+        Every product I have worked on eventually reduced to one sentence that had to land — a prompt,
+        a support reply, a menu, a line of scripture read out of rhythm. Language is not the wrapper
+        around the work. It is the work.
+      </p>
+      <p>
+        What we call communication is mostly the repair of miscommunication, and the repair is the
+        craft: choosing the register, holding the ambiguity open long enough to see what is actually
+        being asked, then saying the smaller, truer thing.
+      </p>
+
+      <h2>On machines.</h2>
+      <p>
+        Models do not understand. They approximate understanding well enough to be useful, and the
+        seam shows exactly where the approximation stops. My work is to know where that seam is —
+        the workflow, the prompt, the review step, the person in the loop — so the seam never lands
+        on a stranger who is trying to be understood.
+      </p>
+
+      <blockquote class="pull">
+        A model that speaks fluently and means nothing is worse than silence.
+      </blockquote>
+
+      <h2>On the studio.</h2>
+      <p>
+        Irsha Global exists because good ideas die of bad execution more often than of bad ideas.
+        The studio keeps the same discipline as the language work: read closely, build small —
+        <a class="link-quiet" href="https://irsha.me">irsha.me</a> — and ship the honest version.
+      </p>
+    </div>
+  </section>
+
+  <section class="section shell" id="work" aria-labelledby="work-title">
+    <div class="section-head reveal">
+      <h2 id="work-title">Selected work</h2>
+      <p>Three ventures and the studio that holds them — language, hospitality and commerce, built by the same small team.</p>
+    </div>
+
+    <ol class="work-list">
+      <li class="work reveal" style="--i: 0">
+        <div class="work-copy">
+          <div class="work-meta">
+            <span>Talkingo</span><span>AI language · talkingo.ai</span><span>2024 — present</span>
+          </div>
+          <h3>A machine that teaches you to speak.</h3>
+          <p>
+            Talkingo is conversation practice for people learning a language: an AI partner that
+            listens, answers, and corrects without breaking the flow. I run production — the prompt
+            architecture, the review loop, and the line between what a model can say and what a
+            learner should hear.
+          </p>
+          <ul class="work-facts">
+            <li>Conversation-led practice: scenarios, prompts and corrections that stay gentle.</li>
+            <li>Production workflow and release rhythm, without shortening review.</li>
+            <li>Evaluation passes that catch fluent nonsense before a learner does.</li>
+          </ul>
+        </div>
+        <figure class="specimen specimen--chat">
+          <div class="chat">
+            <p class="chat-line"><span class="chat-who">Learner</span>“I always wanted learn how to cook.”</p>
+            <span class="chat-rule"></span>
+            <p class="chat-fix"><span class="chat-who">Talkingo</span>“I’ve always wanted <em>to learn</em> how to cook.”</p>
+          </div>
+          <figcaption>Correction without interruption</figcaption>
+        </figure>
+      </li>
+
+      <li class="work reveal" id="studio" style="--i: 1">
+        <div class="work-copy">
+          <div class="work-meta">
+            <span>Irsha Global</span><span>The studio · irsha.me</span><span>Independent</span>
+          </div>
+          <h3>One studio, three ventures.</h3>
+          <p>
+            Irsha is the container for the work: Talkingo, Mangodish and Lunitaa, built and held by
+            the same small team. The method is deliberately unfashionable — research first, few
+            decisions, and no ornament that cannot be defended in one sentence.
+          </p>
+          <ul class="work-facts">
+            <li>Product, brand and operating system for each venture.</li>
+            <li>One standard held across language, hospitality and commerce.</li>
+            <li>Outside projects taken selectively — never in parallel with a launch.</li>
+          </ul>
+        </div>
+
+        <figure class="specimen specimen--plate">
+          <div class="plate" id="plate">
+            <svg class="plate-svg" viewBox="0 0 600 600" role="img" aria-label="Diagram: three ventures arranged in rings around one studio">
+              <g class="cross" aria-hidden="true">
+                <line x1="300" y1="8" x2="300" y2="592"></line>
+                <line x1="8" y1="300" x2="592" y2="300"></line>
+              </g>
+              <g class="ticks" aria-hidden="true">
+                <circle cx="300" cy="300" r="252"></circle>
+              </g>
+              <circle class="edge" cx="300" cy="300" r="272" aria-hidden="true"></circle>
+              <text class="plate-caption" x="30" y="38">Irsha Global — plate 01</text>
+              <text class="plate-caption" x="570" y="38" text-anchor="end">30.0444° N · 31.2357° E</text>
+
+              <g class="orbits" aria-hidden="true">
+                <circle class="orbit orbit-1" cx="300" cy="300" r="92" pathLength="100"></circle>
+                <circle class="orbit orbit-2" cx="300" cy="300" r="152" pathLength="100"></circle>
+                <circle class="orbit orbit-3" cx="300" cy="300" r="212" pathLength="100"></circle>
+              </g>
+              <g class="spokes" aria-hidden="true">
+                <line class="spoke spoke-1" x1="300" y1="300" x2="359" y2="229"></line>
+                <line class="spoke spoke-2" x1="300" y1="300" x2="168" y2="376"></line>
+                <line class="spoke spoke-3" x1="300" y1="300" x2="462" y2="436"></line>
+              </g>
+
+              <g class="core" aria-hidden="true">
+                <circle class="core-halo" cx="300" cy="300" r="22"></circle>
+                <circle class="core-dot" cx="300" cy="300" r="4"></circle>
+                <text class="core-label" x="300" y="332" text-anchor="middle">studio</text>
+              </g>
+
+              <g class="dust" aria-hidden="true">
+                <circle cx="122" cy="140" r="1.4"></circle>
+                <circle cx="478" cy="112" r="1.2"></circle>
+                <circle cx="546" cy="286" r="1.5"></circle>
+                <circle cx="72" cy="330" r="1.2"></circle>
+                <circle cx="228" cy="76" r="1.4"></circle>
+                <circle cx="390" cy="540" r="1.2"></circle>
+                <circle cx="508" cy="468" r="1.4"></circle>
+                <circle cx="128" cy="516" r="1.2"></circle>
+              </g>
+
+              <g class="plate-node" data-orbit="1">
+                <circle class="node-halo" cx="359" cy="229" r="15"></circle>
+                <circle class="node-dot" cx="359" cy="229" r="4.5"></circle>
+                <text class="node-label" x="376" y="227">Talkingo</text>
+                <text class="node-sub" x="376" y="242">01 — language</text>
+              </g>
+
+              <g class="plate-node" data-orbit="2">
+                <circle class="node-halo" cx="168" cy="376" r="15"></circle>
+                <circle class="node-dot" cx="168" cy="376" r="4.5"></circle>
+                <text class="node-label" x="151" y="374" text-anchor="end">Mangodish</text>
+                <text class="node-sub" x="151" y="389" text-anchor="end">02 — hospitality</text>
+              </g>
+
+              <g class="plate-node" data-orbit="3">
+                <circle class="node-halo" cx="462" cy="436" r="15"></circle>
+                <circle class="node-dot" cx="462" cy="436" r="4.5"></circle>
+                <text class="node-label" x="479" y="434">Lunitaa</text>
+                <text class="node-sub" x="479" y="449">03 — commerce</text>
+              </g>
+            </svg>
+          </div>
+          <figcaption>Fig. 01 — three ventures, one studio · Cairo</figcaption>
+        </figure>
+      </li>
+
+      <li class="work reveal" style="--i: 2">
+        <div class="work-copy">
+          <div class="work-meta">
+            <span>Mangodish</span><span>Hospitality tech · mangodish.com</span><span>Venture</span>
+          </div>
+          <h3>Service, connected end to end.</h3>
+          <p>
+            QR menus, ordering, payments and a kitchen display that updates while the room is full.
+            Mangodish is restaurant software designed for the dinner rush rather than the demo —
+            every state has to survive a Saturday at eight.
+          </p>
+          <ul class="work-facts">
+            <li>Guest flow from scan to table: menu, order, pay.</li>
+            <li>Real-time kitchen display and order state.</li>
+            <li>Tuned with operators, tested under service pressure.</li>
+          </ul>
+        </div>
+        <figure class="specimen specimen--ticket">
+          <div class="ticket">
+            <div class="ticket-top"><span>Table 04</span><span>12:04</span></div>
+            <div class="ticket-row"><span>Roasted tomato pasta</span><span>×1</span></div>
+            <div class="ticket-row"><span>Garden burrata</span><span>×1</span></div>
+            <div class="ticket-row"><span>Still water</span><span>×2</span></div>
+            <div class="ticket-foot"><span>Sent to kitchen</span><b>#0412</b></div>
+          </div>
+          <figcaption>Scan → order → kitchen, in seconds</figcaption>
+        </figure>
+      </li>
+
+      <li class="work reveal" style="--i: 3">
+        <div class="work-copy">
+          <div class="work-meta">
+            <span>Lunitaa</span><span>E-commerce · lunitaa.com</span><span>Venture</span>
+          </div>
+          <h3>A storefront with a point of view.</h3>
+          <p>
+            Statement sneakers and small accessories, sold direct. Lunitaa is the commerce side of
+            the practice: catalogue, checkout, and the copy that has to carry a product page when
+            the photograph has three seconds to do its work.
+          </p>
+          <ul class="work-facts">
+            <li>Storefront, catalogue and checkout, built end to end.</li>
+            <li>Product pages written for a phone, read in ten seconds.</li>
+            <li>A brand voice that survives a discount season.</li>
+          </ul>
+        </div>
+        <figure class="specimen specimen--product">
+          <div class="product">
+            <span class="product-brand">Lunitaa<i>.</i></span>
+            <span class="product-name">Statement sneakers</span>
+            <div class="product-sizes"><span>36</span><span>37</span><span>38</span><span>39</span></div>
+            <div class="product-buy"><span>Add to bag</span><span>In stock</span></div>
+          </div>
+          <figcaption>One photograph, two sentences, a checkout</figcaption>
+        </figure>
+      </li>
+    </ol>
+  </section>
+
+  <section class="section shell" id="practice" aria-labelledby="practice-title">
+    <div class="section-head reveal">
+      <h2 id="practice-title">What I build</h2>
+      <p>Four disciplines, one habit: make the thing work before making it beautiful.</p>
+    </div>
+
+    <div class="practice-grid reveal">
+      <article class="practice-item">
+        <span class="practice-no">01</span>
+        <h3>Commerce</h3>
+        <p>Storefronts, catalogues and checkout, plus the operations behind them. Built to be run by a small team, not a platform fee.</p>
+      </article>
+      <article class="practice-item">
+        <span class="practice-no">02</span>
+        <h3>Web &amp; apps</h3>
+        <p>React, Node, APIs and dashboards. The unglamorous middle where a product either works or quietly does not.</p>
+      </article>
+      <article class="practice-item">
+        <span class="practice-no">03</span>
+        <h3>Applied AI</h3>
+        <p>Prompt architecture, evaluation and human-in-the-loop review. Models that are useful at the edges and honest at the seams.</p>
+      </article>
+      <article class="practice-item">
+        <span class="practice-no">04</span>
+        <h3>Language</h3>
+        <p>Hindi, English and Arabic — modern standard and Egyptian. Localisation that carries register, not only meaning.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section shell" id="background" aria-labelledby="bg-title">
+    <div class="section-head reveal">
+      <h2 id="bg-title">Background</h2>
+      <p>Ten years in, the interesting part is still the same: getting a sentence to land.</p>
+    </div>
+
+    <div class="bg-body reveal">
+      <p>
+        I started with landing pages and a checkout, then kept going — client sites, apps and
+        e-commerce builds — until the work became ventures of my own. Somewhere in the middle I began
+        an M.A. in Arabic rhetoric at Al Azhar: still unfinished, still useful.
+      </p>
+      <p>
+        Rhetoric is where I learned to notice the difference between what a text says and what it is
+        doing. That habit turned out to be the whole job. A product page, a prompt, a menu and a
+        support reply are all arguments, and all of them fail quietly when they are badly made.
+      </p>
+      <p class="bg-note mono">Cairo · Al Azhar / Hindi · English · Arabic · Spanish · French</p>
+      <p class="bg-link"><a class="link-quiet" href="#background">The full record — Curriculum vitae</a></p>
+    </div>
+  </section>
+
+  <section class="section shell conversation" id="conversation" aria-labelledby="conv-title">
+    <div class="conv-grid">
+      <div class="conv-copy reveal">
+        <h2 id="conv-title">Tell me what you are building.</h2>
+        <p>
+          No deck, no pitch. Twenty minutes on the thing you are stuck on — a storefront that will
+          not convert, an app that needs a second brain, a model that keeps missing the point.
+        </p>
+
+        <form id="bookForm" action="https://api.web3forms.com/submit" method="POST" novalidate>
+          <input type="hidden" name="access_key" value="de89f325-1f9a-4376-8698-2441236954c2">
+          <input type="hidden" name="subject" value="Conversation request — qadri.irsha.me">
+          <input type="hidden" name="from_name" value="Shabihul Quadri — Portfolio">
+          <input class="hp" type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+          <div class="field">
+            <label for="f-name">Your name</label>
+            <input id="f-name" name="name" type="text" autocomplete="name" placeholder="Who is writing" required>
+          </div>
+          <div class="field">
+            <label for="f-email">Email</label>
+            <input id="f-email" name="email" type="email" autocomplete="email" inputmode="email" placeholder="you@domain.com" required>
+          </div>
+          <div class="field">
+            <label for="f-message">What is this about</label>
+            <textarea id="f-message" name="message" rows="3" placeholder="A sentence is enough — I will ask the rest." required></textarea>
+          </div>
+
+          <p class="form-error" id="formError" role="alert" aria-live="assertive"></p>
+
+          <button class="submit" id="submitBtn" type="submit">
+            <span id="submitLabel">Request a conversation</span>
+            <svg viewBox="0 0 12 12" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.2">
+              <path d="M2.5 9.5 9.5 2.5M4 2.5h5.5V8"/>
+            </svg>
+          </button>
+
+          <p class="form-note">Prefer email? <a href="mailto:qadri@duck.com">qadri@duck.com</a></p>
+        </form>
+
+        <div class="form-done" id="formDone" hidden tabindex="-1">
+          <h3>Received.</h3>
+          <p>
+            Thank you — that is enough to begin. I will reply within two working days, usually with a
+            question rather than a calendar link.
+          </p>
+        </div>
+      </div>
+
+      <aside class="conv-aside reveal" style="--i: 1" aria-label="What to expect">
+        <dl>
+          <div><dt>Reply</dt><dd>Within two working days.</dd></div>
+          <div><dt>Time</dt><dd>Cairo, Egypt — GMT+2. Early mornings and late evenings both work.</dd></div>
+          <div><dt>Languages</dt><dd>Hindi, English, Arabic — whichever is the truest version of your thought.</dd></div>
+          <div><dt>Format</dt><dd>Twenty minutes, no slides, no recording unless you ask.</dd></div>
+        </dl>
+      </aside>
+    </div>
+  </section>
+</main>
+
+<footer class="site-foot">
+  <span class="foot-wm" aria-hidden="true">Quadri<b>.</b></span>
+  <div class="shell foot-inner">
+    <div class="foot-top">
+      <p class="foot-line reveal">Say the thing you cannot quite <em>say.</em></p>
+      <nav class="foot-links" aria-label="Footer">
+        <a href="#work">Work</a>
+        <a href="#studio">Studio</a>
+        <a href="#practice">Practice</a>
+        <a href="#background">Background</a>
+        <a href="#background">CV</a>
+        <a href="mailto:qadri@duck.com">Email</a>
+      </nav>
+    </div>
+    <div class="foot-bottom">
+      <span>Shabihul Quadri — Cairo, Egypt</span>
+      <span>Built on paper and ink · © 2026</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  "use strict";
+
+  if ("scrollRestoration" in history) { history.scrollRestoration = "manual"; }
+  window.scrollTo(0, 0);
+
+  var finePointer = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+  var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  /* Header hairline + condensed bar once the page moves */
+  var head = document.getElementById("siteHead");
+  var bar = document.getElementById("progressBar");
+  var ticking = false;
+
+  function paint() {
+    head.classList.toggle("is-stuck", window.scrollY > 8);
+    if (bar) {
+      var max = document.documentElement.scrollHeight - window.innerHeight;
+      var p = max > 0 ? Math.min(window.scrollY / max, 1) : 0;
+      bar.style.transform = "scaleX(" + p.toFixed(4) + ")";
+    }
+    ticking = false;
+  }
+
+  function onScroll() {
+    if (!ticking) {
+      ticking = true;
+      window.requestAnimationFrame(paint);
+    }
+  }
+  onScroll();
+  window.addEventListener("scroll", onScroll, { passive: true });
+
+  /* Reveal — once, quietly */
+  var revealables = document.querySelectorAll(".reveal");
+  if (!reduceMotion && "IntersectionObserver" in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-in");
+          io.unobserve(entry.target);
+        }
+      });
+    }, { rootMargin: "0px 0px -8% 0px", threshold: 0.12 });
+    revealables.forEach(function (el) { io.observe(el); });
+  } else {
+    revealables.forEach(function (el) { el.classList.add("is-in"); });
+  }
+
+  /* Portrait — spotlight follows the pointer, and a graceful empty plate if the file is missing */
+  var portrait = document.getElementById("portrait");
+  var img = document.getElementById("portraitImg");
+  if (img) {
+    var markEmpty = function () { portrait.classList.add("is-empty"); };
+    var markLoaded = function () { img.classList.add("is-loaded"); };
+    img.addEventListener("error", markEmpty);
+    img.addEventListener("load", markLoaded);
+    if (img.complete) {
+      if (img.naturalWidth === 0) { markEmpty(); } else { markLoaded(); }
+    }
+  }
+  if (portrait && finePointer) {
+    var frame = portrait.querySelector(".portrait-frame");
+    frame.addEventListener("pointermove", function (event) {
+      var rect = frame.getBoundingClientRect();
+      frame.style.setProperty("--mx", ((event.clientX - rect.left) / rect.width) * 100 + "%");
+      frame.style.setProperty("--my", ((event.clientY - rect.top) / rect.height) * 100 + "%");
+    });
+  }
+
+  /* Studio plate — hovering a venture draws its orbit */
+  var plate = document.getElementById("plate");
+  if (plate) {
+    var nodes = plate.querySelectorAll(".plate-node");
+    nodes.forEach(function (node) {
+      node.addEventListener("pointerenter", function () {
+        plate.dataset.lit = node.dataset.orbit;
+      });
+      node.addEventListener("pointerleave", function () {
+        delete plate.dataset.lit;
+      });
+    });
+  }
+
+  /* Booking form — Web3Forms with inline states */
+  var form = document.getElementById("bookForm");
+  var done = document.getElementById("formDone");
+  var btn = document.getElementById("submitBtn");
+  var label = document.getElementById("submitLabel");
+  var errorBox = document.getElementById("formError");
+  var defaultLabel = label.textContent;
+
+  function setBusy(state) {
+    btn.disabled = state;
+    btn.setAttribute("aria-busy", state ? "true" : "false");
+    label.textContent = state ? "Sending…" : defaultLabel;
+  }
+
+  form.addEventListener("submit", function (event) {
+    event.preventDefault();
+    errorBox.textContent = "";
+
+    var name = form.elements.name.value.trim();
+    var email = form.elements.email.value.trim();
+    var message = form.elements.message.value.trim();
+
+    if (name.length < 2) {
+      errorBox.textContent = "A name, so I know who I am replying to.";
+      form.elements.name.focus();
+      return;
+    }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) {
+      errorBox.textContent = "That email address looks incomplete.";
+      form.elements.email.focus();
+      return;
+    }
+    if (message.length < 4) {
+      errorBox.textContent = "One honest sentence is enough.";
+      form.elements.message.focus();
+      return;
+    }
+
+    setBusy(true);
+
+    fetch(form.action, {
+      method: "POST",
+      headers: { "Content-Type": "application/json", Accept: "application/json" },
+      body: JSON.stringify({
+        access_key: form.elements.access_key.value,
+        subject: form.elements.subject.value,
+        from_name: form.elements.from_name.value,
+        name: name,
+        email: email,
+        message: message,
+        botcheck: form.elements.botcheck.checked
+      })
+    })
+      .then(function (response) { return response.json(); })
+      .then(function (result) {
+        if (result && result.success) {
+          form.hidden = true;
+          done.hidden = false;
+          done.focus();
+        } else {
+          throw new Error((result && result.message) || "Send failed");
+        }
+      })
+      .catch(function () {
+        setBusy(false);
+        errorBox.textContent = "That did not go through. Try again, or write to qadri@duck.com.";
+      });
+  });
+})();
+</script>
+</body>
+</html>

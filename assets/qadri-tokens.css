@@ -1,0 +1,113 @@
+/* Hallmark · tokens · qadri.irsha.me
+ * Theme: Paper & Ink (studied family DNA from irsha.me — matte paper, one blue, hairline rules)
+ * paper band: light · display style: classical-serif (Instrument Serif, upright) · accent hue: cool (272)
+ */
+
+:root {
+  /* ── Colour ───────────────────────────────────────────── */
+  --color-paper:          oklch(94.8% 0.011 90);
+  --color-paper-raised:   oklch(97.6% 0.007 90);
+  --color-paper-sunk:     oklch(91.2% 0.013 90);
+  --color-ink:            oklch(21.5% 0.006 130);
+  --color-ink-2:          oklch(34% 0.008 120);
+  --color-body:           oklch(41% 0.009 110);
+  --color-muted:          oklch(47% 0.010 108);
+  --color-line:           oklch(85.5% 0.013 90);
+  --color-line-strong:    oklch(72% 0.012 90);
+  --color-accent:         oklch(52% 0.255 272);
+  --color-accent-deep:    oklch(44% 0.245 272);
+  --color-accent-wash:    oklch(52% 0.255 272 / 0.07);
+  --color-accent-edge:    oklch(52% 0.255 272 / 0.45);
+  --color-accent-halo:    oklch(52% 0.255 272 / 0.16);
+  --color-accent-veil:    oklch(52% 0.255 272 / 0.10);
+  --color-alert:          oklch(47% 0.185 27);
+  --color-plate-tint:     oklch(52% 0.255 272 / 0.18);
+  --color-glow:           oklch(100% 0 0 / 0.22);
+
+  --color-invert-paper:   oklch(96% 0.006 90);
+  --color-invert-body:    oklch(88% 0.010 90);
+  --color-invert-muted:   oklch(80% 0.012 90);
+  --color-invert-line:    oklch(100% 0 0 / 0.22);
+  --color-invert-accent:  oklch(84% 0.105 275);
+
+  /* Footer — indigo field from irsha.me/digital */
+  --color-footer-1:       oklch(50% 0.245 274);
+  --color-footer-2:       oklch(40% 0.230 275);
+  --color-footer-3:       oklch(30% 0.205 273);
+  --color-footer-4:       oklch(25% 0.175 275);
+  --grad-footer: radial-gradient(120% 100% at 14% 0%, var(--color-footer-1) 0%, var(--color-footer-2) 34%, var(--color-footer-3) 74%, var(--color-footer-4) 100%);
+  --color-watermark:      oklch(96% 0.006 90 / 0.07);
+  --color-watermark-accent: oklch(78% 0.12 276 / 0.55);
+
+  --color-paper-glass:    oklch(94.8% 0.011 90 / 0.82);
+
+  /* ── Type ─────────────────────────────────────────────── */
+  --font-display: 'Instrument Serif', 'Iowan Old Style', 'Palatino Linotype', Georgia, serif;
+  --font-body:    'DM Sans', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  --font-mono:    'DM Mono', ui-monospace, 'SFMono-Regular', Consolas, monospace;
+  --font-arabic:  'Amiri', 'Noto Naskh Arabic', 'Traditional Arabic', serif;
+
+  --text-2xs:  10px;
+  --text-xs:   11.5px;
+  --text-sm:   13px;
+  --text-base: 15.5px;
+  --text-md:   17.5px;
+  --text-lg:   21px;
+  --text-xl:   clamp(25px, 2.4vw, 31px);
+  --text-2xl:  clamp(31px, 3.6vw, 44px);
+  --text-3xl:  clamp(38px, 4.8vw, 58px);
+  --text-display-s: clamp(44px, 6.4vw, 76px);
+  --text-display:   clamp(54px, 9vw, 118px);
+  --text-display-l: clamp(62px, 12.5vw, 172px);
+
+  --leading-tight: 0.94;
+  --leading-snug:  1.22;
+  --leading-body:  1.72;
+  --tracking-tight: -0.028em;
+  --tracking-display: -0.045em;
+  --tracking-wide: 0.14em;
+
+  /* ── Space (4pt scale) ────────────────────────────────── */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 96px;
+  --space-10: 128px;
+  --space-11: 176px;
+
+  --gutter: clamp(20px, 5vw, 72px);
+  --shell: 1320px;
+  --measure: 60ch;
+
+  /* ── Motion ───────────────────────────────────────────── */
+  --dur-fast: 140ms;
+  --dur-base: 240ms;
+  --dur-slow: 460ms;
+  --ease-out: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --ease-in: cubic-bezier(0.4, 0, 1, 1);
+  --ease-in-out: cubic-bezier(0.6, 0, 0.2, 1);
+
+  /* ── Rules & radii ────────────────────────────────────── */
+  --rule-hair: 1px;
+  --rule-focus: 2px;
+  --radius-none: 0px;
+  --radius-sm: 2px;
+
+  --shadow-lift: 0 18px 48px oklch(21.5% 0.006 130 / 0.08);
+  --shadow-plate: 0 30px 70px oklch(21.5% 0.006 130 / 0.10);
+
+  /* ── Surfaces ─────────────────────────────────────────── */
+  --grad-paper:
+    radial-gradient(1100px 600px at 74% -8%, oklch(52% 0.255 272 / 0.05), transparent 68%),
+    radial-gradient(820px 520px at 4% 8%, oklch(100% 0 0 / 0.6), transparent 62%);
+  --grad-plate:
+    radial-gradient(70% 70% at 50% 42%, oklch(52% 0.255 272 / 0.07), transparent 72%);
+  --noise: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E");
+
+  --dur-reveal: 760ms;
+}
