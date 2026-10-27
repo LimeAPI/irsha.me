@@ -19,6 +19,9 @@ A warm, editorial, paper-toned one-pager: Instrument Serif headlines, DM Sans bo
 - Section index: ventures, services, **digital & AI transformation**, studio, philosophy, about, contact
 - Vertical venture story on every screen size — no scroll hijacking, each venture reachable by normal scroll (plus quick-jump chips)
 - Scroll-reveal animation, active-section nav highlighting, reading-progress bar, WhatsApp quick contact
+- First-visit logo ignition: dot burst + blue ring sweep, ~1.2s, CSS-only, skipped for reduced motion and repeat visits
+- Offices block (Sheridan WY registered office, Cairo, India via US line, Managua) with WhatsApp-only numbers
+- Legal identity surfaced as "Irsha Global LLC" in the copyright, footer and Organization schema
 - Custom SVG artwork and icons, adaptive blend-mode cursor that stays visible on both light and dark sections
 - Fully responsive, keyboard-navigable, and respects `prefers-reduced-motion`
 - Schema.org `Organization` JSON-LD, Open Graph / Twitter Card metadata, sitemap, `robots.txt`, and a branded `404.html`
