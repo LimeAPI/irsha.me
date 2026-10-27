@@ -16,8 +16,10 @@ A warm, editorial, paper-toned one-pager: Instrument Serif headlines, DM Sans bo
 
 - **Single self-contained page** — vanilla HTML, CSS, and JS inline in `index.html`. No build step, no dependencies.
 - Google Fonts: Instrument Serif, DM Sans, DM Mono
-- Scroll-reveal animation, sticky horizontal venture passage on desktop, vertical flow on mobile
-- Custom SVG artwork and icons, reading-progress bar, WhatsApp quick contact
+- Section index: ventures, services, **digital & AI transformation**, studio, philosophy, about, contact
+- Vertical venture story on every screen size — no scroll hijacking, each venture reachable by normal scroll (plus quick-jump chips)
+- Scroll-reveal animation, active-section nav highlighting, reading-progress bar, WhatsApp quick contact
+- Custom SVG artwork and icons, adaptive blend-mode cursor that stays visible on both light and dark sections
 - Fully responsive, keyboard-navigable, and respects `prefers-reduced-motion`
 - Schema.org `Organization` JSON-LD, Open Graph / Twitter Card metadata, sitemap, `robots.txt`, and a branded `404.html`
 
