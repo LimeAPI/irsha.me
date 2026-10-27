@@ -1231,7 +1231,37 @@ form { margin: 0; }
   body::after { display: none; }
   .section, .preface { padding-block: 24px; }
 }
-</style>
+
+/* Founder portrait as a background plate (behind the scene) */
+.hero{position:relative;overflow:hidden;isolation:isolate}
+.hero-grid{position:relative;z-index:2}
+.portrait{position:absolute!important;z-index:0;right:-10%;bottom:-24%;width:min(64%,780px);max-width:none;margin:0;opacity:.17;pointer-events:none;grid-column:auto;grid-row:auto;order:0;-webkit-mask-image:radial-gradient(ellipse at 68% 46%,#000 2%,transparent 74%);mask-image:radial-gradient(ellipse at 68% 46%,#000 2%,transparent 74%)}
+.portrait::before,.portrait::after{display:none}
+.portrait-frame{aspect-ratio:4/5;border:0;background:transparent;animation:none;box-shadow:none}
+.portrait-frame::after{display:none}
+.portrait-frame img{opacity:1!important;filter:grayscale(1) contrast(1.06)!important;transform:none;animation:portraitBreathe 26s ease-in-out infinite}
+.portrait figcaption,.portrait-spot,.portrait .grain{display:none}
+@media(max-width:1023px){.portrait{right:-18%;bottom:-14%;width:92%;opacity:.14}}
+/* mid-page CTA band */
+.cta-band { padding-block: clamp(40px, 6vw, 84px); }
+.cta-band-in { border-top: var(--rule-hair) solid var(--color-line); border-bottom: var(--rule-hair) solid var(--color-line); padding-block: clamp(28px, 4vw, 52px); display: grid; gap: var(--space-5); }
+.cta-kick { color: var(--color-muted); letter-spacing: 0.1em; text-transform: uppercase; margin: 0; }
+.cta-band h2 { font-family: var(--font-display); font-size: clamp(30px, 4.4vw, 58px); line-height: 0.98; letter-spacing: -0.035em; font-weight: 400; margin: 0; max-width: 22ch; }
+.cta-band h2 em { font-style: italic; color: var(--color-accent); }
+.cta-band-actions { display: flex; flex-wrap: wrap; gap: var(--space-5) var(--space-7); align-items: center; }
+/* founder page refinements */
+.work-for { margin: var(--space-4) 0 0; font-family: var(--font-display); font-size: clamp(17px, 1.5vw, 21px); line-height: 1.45; color: var(--color-muted); max-width: 46ch; }
+.work-for em { font-style: italic; color: var(--color-ink); }
+.boundaries { padding-block: clamp(30px, 4vw, 56px); border-top: var(--rule-hair) solid var(--color-line); }
+.boundaries-kick { color: var(--color-muted); letter-spacing: .1em; text-transform: uppercase; margin: 0 0 var(--space-4); }
+.boundaries-list { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--space-3); }
+.boundaries-list li { position: relative; padding-left: 22px; font-family: var(--font-display); font-size: clamp(17px, 1.6vw, 22px); line-height: 1.4; color: var(--color-muted); }
+.boundaries-list li::before { content: "\2014"; position: absolute; left: 0; color: var(--color-line-strong); }
+.conv-honest { font-family: var(--font-display); font-style: italic; font-size: clamp(18px, 1.7vw, 23px); line-height: 1.5; color: var(--color-ink-2); margin: 0 0 var(--space-5); }
+.signature-wrap { padding-top: clamp(20px, 3vw, 34px); }
+.signature { color: var(--color-muted); letter-spacing: .12em; text-transform: uppercase; margin: 0; }
+@keyframes portraitBreathe { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.035); } }
+@media (prefers-reduced-motion: reduce) { .portrait-frame img { animation: none !important; } }</style>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -1289,7 +1319,7 @@ form { margin: 0; }
               <path d="M2.5 9.5 9.5 2.5M4 2.5h5.5V8"/>
             </svg>
           </a>
-          <a class="link-quiet" href="#background">Curriculum vitae</a>
+          <a class="link-quiet" href="digital.html">Digital &amp; AI practice &#8599;</a>
         </div>
         <p class="hero-meta mono">
           <span>Ten years building</span>
@@ -1355,6 +1385,7 @@ form { margin: 0; }
             <span>Talkingo</span><span>AI language · talkingo.ai</span><span>2024 — present</span>
           </div>
           <h3>A machine that teaches you to speak.</h3>
+          <p class="work-for">For the <em>learner who knows every rule and still freezes when someone says hello.</em></p>
           <p>
             Talkingo is conversation practice for people learning a language: an AI partner that
             listens, answers, and corrects without breaking the flow. I run production — the prompt
@@ -1469,6 +1500,7 @@ form { margin: 0; }
             <span>Mangodish</span><span>Hospitality tech · mangodish.com</span><span>Venture</span>
           </div>
           <h3>Service, connected end to end.</h3>
+          <p class="work-for">For the <em>owner still writing orders on paper at eleven at night.</em></p>
           <p>
             QR menus, ordering, payments and a kitchen display that updates while the room is full.
             Mangodish is restaurant software designed for the dinner rush rather than the demo —
@@ -1498,6 +1530,7 @@ form { margin: 0; }
             <span>Lunitaa</span><span>E-commerce · lunitaa.com</span><span>Venture</span>
           </div>
           <h3>A storefront with a point of view.</h3>
+          <p class="work-for">For the <em>small brand that cannot afford to look generic.</em></p>
           <p>
             Statement sneakers and small accessories, sold direct. Lunitaa is the commerce side of
             the practice: catalogue, checkout, and the copy that has to carry a product page when
@@ -1522,6 +1555,18 @@ form { margin: 0; }
     </ol>
   </section>
 
+  <section class="shell cta-band" aria-labelledby="cta-title">
+    <div class="cta-band-in">
+      <p class="mono cta-kick">If this is the work</p>
+      <h2 id="cta-title">The fourth venture<br>could be <em>yours.</em></h2>
+      <div class="cta-band-actions">
+        <a class="link-cta" href="#conversation">Start a conversation
+          <svg viewBox="0 0 12 12" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M2.5 9.5 9.5 2.5M4 2.5h5.5V8"/></svg>
+        </a>
+        <a class="link-quiet" href="digital.html">See how the studio works &#8599;</a>
+      </div>
+    </div>
+  </section>
   <section class="section shell" id="practice" aria-labelledby="practice-title">
     <div class="section-head reveal">
       <h2 id="practice-title">What I build</h2>
@@ -1552,6 +1597,14 @@ form { margin: 0; }
     </div>
   </section>
 
+  <section class="shell boundaries">
+    <p class="mono boundaries-kick">And what I say no to</p>
+    <ul class="boundaries-list">
+      <li>A site with no measurable outcome.</li>
+      <li>AI added because it is on a slide.</li>
+      <li>A launch with no decision-maker in the room.</li>
+    </ul>
+  </section>
   <section class="section shell" id="background" aria-labelledby="bg-title">
     <div class="section-head reveal">
       <h2 id="bg-title">Background</h2>
@@ -1570,14 +1623,14 @@ form { margin: 0; }
         support reply are all arguments, and all of them fail quietly when they are badly made.
       </p>
       <p class="bg-note mono">Cairo · Al Azhar / Hindi · English · Arabic · Spanish · French</p>
-      <p class="bg-link"><a class="link-quiet" href="#background">The full record — Curriculum vitae</a></p>
     </div>
   </section>
 
   <section class="section shell conversation" id="conversation" aria-labelledby="conv-title">
     <div class="conv-grid">
       <div class="conv-copy reveal">
-        <h2 id="conv-title">Tell me what you are building.</h2>
+        <h2 id="conv-title">What do you keep postponing?</h2>
+        <p class="conv-honest">If you have read this far, you already know whether it is worth twenty minutes.</p>
         <p>
           No deck, no pitch. Twenty minutes on the thing you are stuck on — a storefront that will
           not convert, an app that needs a second brain, a model that keeps missing the point.
@@ -1635,6 +1688,7 @@ form { margin: 0; }
   </section>
 </main>
 
+<div class="shell signature-wrap"><p class="signature mono">Cairo &middot; October 2026</p></div>
 <footer class="site-foot">
   <span class="foot-wm" aria-hidden="true">Quadri<b>.</b></span>
   <div class="shell foot-inner">
@@ -1645,7 +1699,6 @@ form { margin: 0; }
         <a href="#studio">Studio</a>
         <a href="#practice">Practice</a>
         <a href="#background">Background</a>
-        <a href="#background">CV</a>
         <a href="mailto:qadri@duck.com">Email</a>
       </nav>
     </div>
