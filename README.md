@@ -1,28 +1,54 @@
 # Irsha Global — irsha.me
 
-The official website for **Irsha Global**, a venture studio behind **[Talkingo](https://talkingo.ai)** and **[Mangodish](https://mangodish.com)**.
+The official website for **Irsha Global**, an independent venture studio building thoughtful digital products across language learning, hospitality technology, and everyday design.
 
-A warm, light, editorial-style portfolio — crafted with Instrument Serif headings, DM Sans body, and sophisticated gold/teal/amber accents.
+A warm, editorial, paper-toned one-pager: Instrument Serif headlines, DM Sans body copy, DM Mono details, and a single electric-blue accent.
 
 ## Portfolio
 
-| Project | Status | Description |
-|---------|--------|-------------|
-| [Talkingo](https://talkingo.ai) | Live | AI language conversation practice — speak from day one |
-| [Mangodish](https://mangodish.com) | In Development | All-in-one restaurant management platform |
+| Venture | Space | Status | Site |
+|---------|-------|--------|------|
+| Talkingo | Language · AI learning | Live | [talkingo.ai](https://talkingo.ai) |
+| Mangodish | Hospitality · Restaurant technology | In development | [mangodish.com](https://mangodish.com) |
+| Lunitaa | Apparel · Everyday essentials | Live | [lunitaa.com](https://lunitaa.com) |
 
 ## Tech
 
-- Vanilla HTML / CSS / JS — zero dependencies
-- Google Fonts: Instrument Serif + DM Sans
-- Custom SVG icons, scroll-triggered reveals, subtle parallax
-- Light theme with warm neutral palette
-- Fully responsive
-- Schema.org JSON-LD for rich search results
-- Open Graph / Twitter Card meta tags
+- **Single self-contained page** — vanilla HTML, CSS, and JS inline in `index.html`. No build step, no dependencies.
+- Google Fonts: Instrument Serif, DM Sans, DM Mono
+- Scroll-reveal animation, sticky horizontal venture passage on desktop, vertical flow on mobile
+- Custom SVG artwork and icons, reading-progress bar, WhatsApp quick contact
+- Fully responsive, keyboard-navigable, and respects `prefers-reduced-motion`
+- Schema.org `Organization` JSON-LD, Open Graph / Twitter Card metadata, sitemap, `robots.txt`, and a branded `404.html`
+
+## Structure
+
+```
+index.html          The entire site (markup + styles + scripts)
+404.html            Branded not-found page
+robots.txt          Crawl rules + sitemap reference
+sitemap.xml         Single-URL sitemap
+CNAME               Custom domain: irsha.me
+.nojekyll           Disable Jekyll processing on GitHub Pages
+assets/             favicon.svg, og-image.png (1200x630), apple-touch-icon.png
+```
+
+## Local preview
+
+```powershell
+python -m http.server 8080
+# then open http://localhost:8080
+```
 
 ## Deploy
 
-Served via **GitHub Pages** with a custom domain: [irsha.me](https://irsha.me)
+Served by **GitHub Pages** with the custom domain [irsha.me](https://irsha.me), deployed from the **`master`** branch root.
 
-The `CNAME` file in root enables the custom domain.
+Because Pages watches `master`, `main` and `master` must be kept in sync:
+
+```powershell
+git push origin main
+git push origin main:master
+```
+
+`CNAME` and `.nojekyll` must stay in the repo root for the custom domain and static hosting to keep working.
