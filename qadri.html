@@ -1235,11 +1235,11 @@ form { margin: 0; }
 /* Founder portrait as a background plate (behind the scene) */
 .hero{position:relative;overflow:hidden;isolation:isolate}
 .hero-grid{position:relative;z-index:2}
-.portrait{position:absolute!important;z-index:0;right:-10%;bottom:-24%;width:min(64%,780px);max-width:none;margin:0;opacity:.17;pointer-events:none;grid-column:auto;grid-row:auto;order:0;-webkit-mask-image:radial-gradient(ellipse at 68% 46%,#000 2%,transparent 74%);mask-image:radial-gradient(ellipse at 68% 46%,#000 2%,transparent 74%)}
+.portrait{position:absolute!important;z-index:0;right:-8%;bottom:-10%;width:min(60%,740px);max-width:none;margin:0;opacity:.28;pointer-events:none;grid-column:auto;grid-row:auto;order:0;-webkit-mask-image:radial-gradient(ellipse at 64% 52%,#000 8%,transparent 78%);mask-image:radial-gradient(ellipse at 64% 52%,#000 8%,transparent 78%)}
 .portrait::before,.portrait::after{display:none}
 .portrait-frame{aspect-ratio:4/5;border:0;background:transparent;animation:none;box-shadow:none}
 .portrait-frame::after{display:none}
-.portrait-frame img{opacity:1!important;filter:grayscale(1) contrast(1.06)!important;transform:none;animation:portraitBreathe 26s ease-in-out infinite}
+.portrait-frame img{opacity:1!important;object-position:50% 40%;filter:grayscale(.45) contrast(1.08) brightness(1.04)!important;transform:none;animation:portraitBreathe 26s ease-in-out infinite}
 .portrait figcaption,.portrait-spot,.portrait .grain{display:none}
 @media(max-width:1023px){.portrait{right:-18%;bottom:-14%;width:92%;opacity:.14}}
 /* mid-page CTA band */
@@ -1261,7 +1261,40 @@ form { margin: 0; }
 .signature-wrap { padding-top: clamp(20px, 3vw, 34px); }
 .signature { color: var(--color-muted); letter-spacing: .12em; text-transform: uppercase; margin: 0; }
 @keyframes portraitBreathe { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.035); } }
-@media (prefers-reduced-motion: reduce) { .portrait-frame img { animation: none !important; } }</style>
+@media (prefers-reduced-motion: reduce) { .portrait-frame img { animation: none !important; } }
+/* places + languages */
+.places, .langs { padding-block: clamp(44px, 5.5vw, 78px); border-top: var(--rule-hair) solid var(--color-line); }
+.places-head { display: grid; grid-template-columns: 1.1fr .9fr; gap: clamp(18px, 3vw, 48px); align-items: end; }
+.places-head h2 { font-family: var(--font-display); font-size: clamp(30px, 4vw, 54px); line-height: .98; letter-spacing: -.035em; font-weight: 400; margin: 0; }
+.places-head p { font-size: 14px; line-height: 1.8; color: var(--color-muted); margin: 0; max-width: 400px; }
+.places-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); border-top: var(--rule-hair) solid var(--color-line); margin-top: clamp(26px, 3.4vw, 44px); }
+.place { padding: 20px 18px 4px 0; border-right: var(--rule-hair) solid var(--color-line); }
+.place:last-child { border-right: 0; }
+.place em { font-family: var(--font-mono); font-size: 10px; font-style: normal; letter-spacing: .1em; text-transform: uppercase; color: var(--color-muted); }
+.place b { display: block; font-family: var(--font-display); font-size: clamp(19px, 1.9vw, 27px); font-weight: 400; letter-spacing: -.03em; margin: 13px 0 7px; }
+.place span { display: block; font-size: 12px; line-height: 1.65; color: var(--color-muted); }
+.lang-list { list-style: none; margin: clamp(24px, 3vw, 40px) 0 0; padding: 0; border-top: var(--rule-hair) solid var(--color-line); }
+.lang-list li { display: grid; grid-template-columns: 1fr .9fr 1fr; gap: 16px; align-items: baseline; padding: 15px 0; border-bottom: var(--rule-hair) solid var(--color-line); }
+.lang-list .n { font-family: var(--font-display); font-size: clamp(19px, 2.1vw, 28px); letter-spacing: -.03em; }
+.lang-list .p { font-family: var(--font-mono); font-size: 11px; letter-spacing: .06em; color: var(--color-ink-2); }
+.lang-list .c { font-family: var(--font-mono); font-size: 10px; letter-spacing: .08em; text-transform: uppercase; color: var(--color-muted); text-align: right; }
+.langs-note { margin: clamp(18px, 2.4vw, 28px) 0 0; color: var(--color-muted); letter-spacing: .06em; }
+@media (max-width: 900px) {
+  .places-head { grid-template-columns: 1fr; gap: 14px; }
+  .places-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .place { border-right: 0; border-bottom: var(--rule-hair) solid var(--color-line); padding: 16px 0; }
+  .place:nth-child(odd) { padding-right: 14px; }
+  .lang-list li { grid-template-columns: 1fr; gap: 4px; }
+  .lang-list .c { text-align: left; }
+}
+/* places coda, client specimen, portrait legibility */
+.places-coda { margin: clamp(22px, 3vw, 34px) 0 0; max-width: 620px; font-family: var(--font-display); font-size: clamp(18px, 1.9vw, 25px); line-height: 1.5; color: var(--color-ink-2); }
+.places-coda em { font-style: italic; color: var(--color-accent); }
+.specimen--shot { padding: 0; overflow: hidden; background: var(--color-paper-sunk); min-height: 0; }
+.specimen--shot::before { display: none; }
+.specimen--shot img { display: block; width: 100%; height: auto; }
+.specimen--shot figcaption { position: static; inset: auto; padding: 12px 16px 14px; border-top: var(--rule-hair) solid var(--color-line); display: flex; justify-content: space-between; gap: 12px; }
+.work-links { margin-top: var(--space-5); }</style>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -1276,7 +1309,6 @@ form { margin: 0; }
     <nav class="head-nav" aria-label="Primary">
       <a href="index.html">Irsha Global &#8599;</a>
       <a href="work.html">Studio work &#8599;</a>
-        <a href="#work">Work</a>
       <a href="#studio">Studio</a>
       <a href="#practice">Practice</a>
       <a class="head-cta" href="#conversation">Book a conversation</a>
@@ -1290,7 +1322,7 @@ form { margin: 0; }
   <section class="hero shell" aria-labelledby="hero-title">
     <div class="hero-grid">
       <div class="hero-main">
-        <p class="hero-kicker mono"><i aria-hidden="true"></i>Cairo, Egypt — ten years building — open to select work</p>
+        <p class="hero-kicker mono"><i aria-hidden="true"></i>Born in India &middot; living globally &middot; Cairo for now</p>
         <h1 id="hero-title">Language is the last <em>interface.</em></h1>
         <p class="lede">
           Ten years of shipping the things people meet first: storefronts, apps, and now AI that
@@ -1301,13 +1333,13 @@ form { margin: 0; }
 
       <figure class="portrait" id="portrait">
         <div class="portrait-frame">
-          <img id="portraitImg" src="assets/portrait.jpg" alt="Shabihul Quadri, photographed on the Al Azhar campus in Cairo" width="900" height="913" decoding="async" fetchpriority="high">
+          <img id="portraitImg" src="assets/portrait.jpg" alt="Shabihul Quadri, photographed in Cairo" width="900" height="913" decoding="async" fetchpriority="high">
           <span class="portrait-spot" aria-hidden="true"></span>
           <span class="grain" aria-hidden="true"></span>
           <div class="portrait-fallback" aria-hidden="true"><span>SQ</span></div>
         </div>
         <figcaption>
-          <span>Cairo · Al Azhar, 2026</span>
+          <span>Cairo, 2026</span>
           <span>Plate 01</span>
         </figcaption>
       </figure>
@@ -1373,6 +1405,20 @@ form { margin: 0; }
     </div>
   </section>
 
+  <section class="places shell" aria-labelledby="places-title">
+    <div class="places-head reveal">
+      <h2 id="places-title">One person,<br>several addresses.</h2>
+      <p>I was born in India and have never quite stayed put. The work travels; the desk moves; the name on the invoice is American.</p>
+    </div>
+    <div class="places-grid reveal">
+      <div class="place"><em>Born</em><b>India</b><span>Where the first language came from.</span></div>
+      <div class="place"><em>Now</em><b>Cairo</b><span>Living here for now &mdash; studying Arabic rhetoric.</span></div>
+      <div class="place"><em>Desk</em><b>Dubai</b><span>Where the work travels to meet people.</span></div>
+      <div class="place"><em>Desk</em><b>Managua</b><span>Where the studio answers in Spanish.</span></div>
+      <div class="place"><em>Registered</em><b>Wyoming</b><span>Where the company lives, quietly.</span></div>
+    </div>
+  <p class="places-coda reveal">Introvert by default, <em>dangerously social</em> by choice. The best moment in this work is the one where a stranger becomes a collaborator &mdash; and the quiet that follows when a hard problem finally gives.</p>
+</section>
   <section class="section shell" id="work" aria-labelledby="work-title">
     <div class="section-head reveal">
       <h2 id="work-title">Selected work</h2>
@@ -1552,6 +1598,29 @@ form { margin: 0; }
           </div>
           <figcaption>One photograph, two sentences, a checkout</figcaption>
         </figure>
+      </li>      <li class="work reveal" style="--i: 4">
+        <div class="work-copy">
+          <div class="work-meta">
+            <span>Global Tours &amp; Travels</span><span>Travel · globaltts.in</span><span>Client</span>
+          </div>
+          <h3>A travel agency that stopped looking like a brochure.</h3>
+          <p class="work-for">For the <em>family business in Lucknow whose counter is now a website.</em></p>
+          <p>
+            Twelve pages, one voice: Wakala, Hajj and Umrah, visa assistance, flights, holidays and
+            stays. Built end to end — copy, structure, layout and the enquiry path that turns a
+            browse into a phone call.
+          </p>
+          <ul class="work-facts">
+            <li>Twelve pages sharing one design language and one enquiry flow.</li>
+            <li>Service pages written for how people actually search.</li>
+            <li>Shipped, live, and still being tuned.</li>
+          </ul>
+          <p class="work-links"><a class="link-cta" href="https://globaltts.in" target="_blank" rel="noopener">Visit globaltts.in ↗</a></p>
+        </div>
+        <figure class="specimen specimen--shot">
+          <img src="assets/work/globaltts.jpg" alt="Global Tours &amp; Travels — website homepage" width="1200" height="750" loading="lazy" decoding="async">
+          <figcaption><span>Twelve pages, one voice</span><span>Live</span></figcaption>
+        </figure>
       </li>
     </ol>
   </section>
@@ -1598,6 +1667,22 @@ form { margin: 0; }
     </div>
   </section>
 
+  <section class="langs shell" aria-labelledby="langs-title">
+    <div class="places-head reveal">
+      <h2 id="langs-title">Seven languages,<br>one habit: listening.</h2>
+      <p>Speaking is the easy half. The other half is hearing what someone means before they finish the sentence &mdash; which is the only part that transfers to software.</p>
+    </div>
+    <ul class="lang-list reveal">
+      <li><span class="n">Hindi</span><span class="p">about 600 million people</span><span class="c">India &amp; the diaspora</span></li>
+      <li><span class="n">Urdu</span><span class="p">about 230 million people</span><span class="c">Pakistan &amp; the diaspora</span></li>
+      <li><span class="n">English</span><span class="p">about 1.5 billion people</span><span class="c">100+ countries</span></li>
+      <li><span class="n">Arabic</span><span class="p">about 420 million people</span><span class="c">25 countries &middot; incl. Egyptian</span></li>
+      <li><span class="n">Spanish</span><span class="p">about 500 million people</span><span class="c">20+ countries</span></li>
+      <li><span class="n">French</span><span class="p">about 300 million people</span><span class="c">29 countries</span></li>
+      <li><span class="n">Persian</span><span class="p">a little</span><span class="c">3 countries</span></li>
+    </ul>
+    <p class="langs-note mono">Figures are rough. Language is always bigger than its census. The list is still open &#8212; Turkish next, Mandarin after that.</p>
+  </section>
   <section class="shell boundaries">
     <p class="mono boundaries-kick">And what I say no to</p>
     <ul class="boundaries-list">
@@ -1614,16 +1699,21 @@ form { margin: 0; }
 
     <div class="bg-body reveal">
       <p>
-        I started with landing pages and a checkout, then kept going — client sites, apps and
-        e-commerce builds — until the work became ventures of my own. Somewhere in the middle I began
-        an M.A. in Arabic rhetoric at Al Azhar: still unfinished, still useful.
+        I started with a landing page and a checkout button, because someone needed to sell something
+        by Friday. Then client sites, then apps, then the awkward middle where both are needed &mdash;
+        and eventually ventures of my own, which turned out to be the same job with higher stakes.
       </p>
       <p>
+        Somewhere in the middle I began an M.A. in Arabic rhetoric: still unfinished, still useful.
         Rhetoric is where I learned to notice the difference between what a text says and what it is
-        doing. That habit turned out to be the whole job. A product page, a prompt, a menu and a
+        doing. That habit turned out to be the whole job &mdash; a product page, a prompt, a menu and a
         support reply are all arguments, and all of them fail quietly when they are badly made.
       </p>
-      <p class="bg-note mono">Cairo · Al Azhar / Hindi · English · Arabic · Spanish · French</p>
+      <p>
+        Ten years on, the tools changed &mdash; most of them answer back now &mdash; and the question has
+        not: does this make someone&#8217;s day measurably easier? If it does not, it is decoration.
+      </p>
+      <p class="bg-note mono">Born in India &middot; Cairo for now &middot; Hindi &middot; Urdu &middot; English &middot; Arabic &middot; Spanish &middot; French &middot; a little Persian</p>
     </div>
   </section>
 
@@ -1697,7 +1787,6 @@ form { margin: 0; }
       <p class="foot-line reveal">Say the thing you cannot quite <em>say.</em></p>
       <nav class="foot-links" aria-label="Footer">
         <a href="work.html">Studio work &#8599;</a>
-        <a href="#work">Work</a>
         <a href="#studio">Studio</a>
         <a href="#practice">Practice</a>
         <a href="#background">Background</a>
@@ -1705,7 +1794,7 @@ form { margin: 0; }
       </nav>
     </div>
     <div class="foot-bottom">
-      <span>Shabihul Quadri — Cairo, Egypt</span>
+      <span>Shabihul Quadri &mdash; India &middot; Cairo &middot; Dubai</span>
       <span>Built on paper and ink · © 2026</span>
     </div>
   </div>
