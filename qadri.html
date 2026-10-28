@@ -1268,14 +1268,16 @@ form { margin: 0; }
 .places-head h2 { font-family: var(--font-display); font-size: clamp(30px, 4vw, 54px); line-height: .98; letter-spacing: -.035em; font-weight: 400; margin: 0; }
 .places-head p { font-size: 14px; line-height: 1.8; color: var(--color-muted); margin: 0; max-width: 400px; }
 .places-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); border-top: var(--rule-hair) solid var(--color-line); margin-top: clamp(26px, 3.4vw, 44px); }
-.place { padding: 20px 18px 4px 0; border-right: var(--rule-hair) solid var(--color-line); }
+.place { position: relative; padding: 20px 18px 4px 0; border-right: var(--rule-hair) solid var(--color-line); }
 .place:last-child { border-right: 0; }
 .place em { font-family: var(--font-mono); font-size: 10px; font-style: normal; letter-spacing: .1em; text-transform: uppercase; color: var(--color-muted); }
 .place b { display: block; font-family: var(--font-display); font-size: clamp(19px, 1.9vw, 27px); font-weight: 400; letter-spacing: -.03em; margin: 13px 0 7px; }
 .place span { display: block; font-size: 12px; line-height: 1.65; color: var(--color-muted); }
 .lang-list { list-style: none; margin: clamp(24px, 3vw, 40px) 0 0; padding: 0; border-top: var(--rule-hair) solid var(--color-line); }
 .lang-list li { display: grid; grid-template-columns: 1fr .9fr 1fr; gap: 16px; align-items: baseline; padding: 15px 0; border-bottom: var(--rule-hair) solid var(--color-line); }
+.lang-list .lang-name { display: flex; align-items: baseline; gap: 12px; }
 .lang-list .n { font-family: var(--font-display); font-size: clamp(19px, 2.1vw, 28px); letter-spacing: -.03em; }
+.lang-list .script { font-family: var(--font-arabic); font-size: clamp(17px, 1.8vw, 23px); color: var(--color-accent); direction: rtl; }
 .lang-list .p { font-family: var(--font-mono); font-size: 11px; letter-spacing: .06em; color: var(--color-ink-2); }
 .lang-list .c { font-family: var(--font-mono); font-size: 10px; letter-spacing: .08em; text-transform: uppercase; color: var(--color-muted); text-align: right; }
 .langs-note { margin: clamp(18px, 2.4vw, 28px) 0 0; color: var(--color-muted); letter-spacing: .06em; }
@@ -1287,6 +1289,101 @@ form { margin: 0; }
   .lang-list li { grid-template-columns: 1fr; gap: 4px; }
   .lang-list .c { text-align: left; }
 }
+
+/* Hallmark · refinement pass: editorial chapter spine + route / language plates */
+.preface { position: relative; padding-top: clamp(42px, 5vw, 72px); }
+.preface-inner { counter-reset: essay; }
+.preface h2 { counter-increment: essay; display: grid; grid-template-columns: 42px minmax(0, 1fr); align-items: baseline; gap: 14px; max-width: 48ch; }
+.preface h2::before { content: "0" counter(essay); font-family: var(--font-mono); font-size: var(--text-2xs); letter-spacing: .12em; color: var(--color-accent); }
+.preface h2:not(:first-child) { margin-top: clamp(48px, 6vw, 78px); padding-top: 16px; border-top: var(--rule-hair) solid var(--color-line); }
+.preface p:first-of-type { font-family: var(--font-display); font-size: clamp(19px, 2vw, 25px); line-height: 1.48; color: var(--color-ink-2); }
+.preface .pull { margin-left: clamp(0px, 7vw, 100px); border-left-width: 2px; }
+
+.places { position: relative; isolation: isolate; margin-top: clamp(18px, 3vw, 40px); padding-bottom: clamp(34px, 4vw, 56px); }
+.places::before { content: ""; position: absolute; z-index: -1; inset-block: 0; left: 50%; width: 100vw; transform: translateX(-50%); background: var(--color-paper-raised); }
+.places-head { margin-bottom: clamp(8px, 1vw, 14px); }
+.preface::before { content: "01 / THE QUESTIONS THAT FOLLOWED ME"; display: block; max-width: min(58ch, 100%); margin: 0 0 clamp(28px, 4vw, 48px) clamp(0px, 12vw, 200px); font-family: var(--font-mono); font-size: var(--text-2xs); letter-spacing: .12em; color: var(--color-muted); }
+.places-head::before { content: "02 / WHERE I AM"; display: block; grid-column: 1 / -1; margin-bottom: 4px; font-family: var(--font-mono); font-size: var(--text-2xs); letter-spacing: .12em; color: var(--color-muted); }
+.places-head::after { content: ""; display: block; grid-column: 1 / -1; grid-row: 3; width: clamp(62px, 10vw, 136px); height: 1px; margin-top: 16px; background: var(--color-accent-edge); }
+.places-grid { position: relative; border-top: 0; margin-top: clamp(28px, 3.4vw, 44px); }
+.places-grid::before { content: ""; position: absolute; left: 4px; right: 4px; top: 4px; height: 1px; background: linear-gradient(90deg, var(--color-accent-edge), var(--color-line-strong) 18%, var(--color-line-strong) 82%, var(--color-accent-edge)); }
+.place { border-right: 0; padding: 27px 18px 4px 0; }
+.place::before { content: ""; position: absolute; top: 0; left: 0; width: 9px; height: 9px; border: 1px solid var(--color-accent); border-radius: 50%; background: var(--color-paper-raised); transition: background var(--dur-base) var(--ease-out), transform var(--dur-base) var(--ease-out); animation: routePulse 5.2s ease-out infinite; }
+.place:nth-child(2)::before { animation-delay: .35s; }
+.place:nth-child(3)::before { animation-delay: .7s; }
+.place:nth-child(4)::before { animation-delay: 1.05s; }
+.place:nth-child(5)::before { animation-delay: 1.4s; }
+@keyframes routePulse { 0%, 74%, 100% { box-shadow: 0 0 0 0 var(--color-accent-halo); } 12% { box-shadow: 0 0 0 5px transparent; } }
+.place:hover::before { background: var(--color-accent); transform: scale(1.16); }
+.places-coda { max-width: 52ch; margin-top: clamp(28px, 3.6vw, 48px); padding-left: clamp(16px, 2.2vw, 28px); border-left: var(--rule-focus) solid var(--color-accent); }
+
+.section#work { padding-top: clamp(26px, 3vw, 44px); }
+.section#work .section-head,.section#practice .section-head,.section#background .section-head { padding-bottom: clamp(18px, 2.4vw, 30px); border-bottom: var(--rule-hair) solid var(--color-line); }
+.section#work .section-head { margin-bottom: clamp(38px, 5vw, 68px); }
+.section#practice .section-head,.section#background .section-head { margin-bottom: clamp(32px, 4vw, 56px); }
+.section#work .section-head::after,.section#practice .section-head::after,.section#background .section-head::after { content: ""; display: block; grid-column: 1 / -1; grid-row: 3; width: clamp(62px, 10vw, 136px); height: 1px; margin-top: 16px; background: var(--color-accent-edge); }
+.section#work .section-head::before { content: "03 / THE WORK"; display: block; grid-column: 1 / -1; margin-bottom: -2px; font-family: var(--font-mono); font-size: var(--text-2xs); letter-spacing: .12em; color: var(--color-muted); }
+.work { transition: background-color var(--dur-slow) var(--ease-out); }
+.work-list { counter-reset: selected-work; }
+.work { counter-increment: selected-work; }
+.work-copy::before { content: "0" counter(selected-work) " / SELECTED WORK"; display: block; margin-bottom: var(--space-4); font-family: var(--font-mono); font-size: var(--text-2xs); letter-spacing: .12em; color: var(--color-muted); }
+.work-copy h3 { max-width: 16ch; }
+.work-for { border-left: 1px solid var(--color-accent-edge); padding-left: var(--space-4); }
+.specimen { background-size: 100% 100%; }
+.specimen--shot img { transition: transform 900ms var(--ease-out); }
+@media (hover: hover) and (pointer: fine) { .specimen--shot:hover img { transform: scale(1.025); } }
+
+.langs { position: relative; }
+.section#practice .section-head::before { content: "04 / THE PRACTICE"; display: block; grid-column: 1 / -1; margin-bottom: -2px; font-family: var(--font-mono); font-size: var(--text-2xs); letter-spacing: .12em; color: var(--color-muted); }
+.langs-head::before { content: "05 / LANGUAGE"; display: block; grid-column: 1 / -1; margin-bottom: 4px; font-family: var(--font-mono); font-size: var(--text-2xs); letter-spacing: .12em; color: var(--color-muted); }
+.langs-head::after { content: ""; display: block; grid-column: 1 / -1; grid-row: 3; width: clamp(62px, 10vw, 136px); height: 1px; margin-top: 16px; background: var(--color-accent-edge); }
+.section#background .section-head::before { content: "07 / THE BACKGROUND"; display: block; grid-column: 1 / -1; margin-bottom: -2px; font-family: var(--font-mono); font-size: var(--text-2xs); letter-spacing: .12em; color: var(--color-muted); }
+.lang-list { counter-reset: language; }
+.lang-list li { counter-increment: language; grid-template-columns: minmax(0, 1.15fr) minmax(0, .9fr) minmax(0, 1fr); gap: 20px; position: relative; }
+.lang-list .lang-name { display: flex; align-items: baseline; gap: 12px; min-width: 0; }
+.lang-list .lang-name::before { content: "0" counter(language); width: 22px; flex: none; font-family: var(--font-mono); font-size: 9px; letter-spacing: .08em; color: var(--color-line-strong); }
+.lang-list .script { font-family: var(--font-arabic); font-size: clamp(17px, 1.7vw, 22px); line-height: 1; color: var(--color-accent); opacity: .78; }
+.lang-list .script[lang="hi"],.lang-list .script[lang="es"],.lang-list .script[lang="fr"] { font-family: var(--font-body); font-size: var(--text-xs); color: var(--color-muted); }
+.lang-list .p { font-size: 10px; letter-spacing: .04em; }
+.langs-note { max-width: 76ch; font-size: 9px; line-height: 1.8; }
+
+.boundaries { display: grid; grid-template-columns: .7fr 1.3fr; gap: clamp(24px, 5vw, 76px); align-items: start; padding-block: clamp(38px, 5vw, 64px); }
+.boundaries::before { content: "06 / THE PRINCIPLE"; grid-column: 1 / -1; font-family: var(--font-mono); font-size: var(--text-2xs); letter-spacing: .12em; color: var(--color-muted); }
+.boundaries-kick { position: sticky; top: 112px; }
+.boundaries-list { border-top: var(--rule-hair) solid var(--color-line); }
+.boundaries-list li { padding: 16px 0 16px 22px; border-bottom: var(--rule-hair) solid var(--color-line); }
+
+.cta-band { padding-block: clamp(42px, 5vw, 68px); }
+.cta-band-in { position: relative; padding-left: clamp(0px, 8vw, 112px); border-block: 0; }
+.cta-band-in::before { content: none; }
+.cta-kick { margin: 0 0 18px; font-family: var(--font-mono); font-size: var(--text-2xs); letter-spacing: .12em; color: var(--color-muted); text-transform: uppercase; }
+.cta-band-in::after { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 1px; background: var(--color-accent-edge); }
+.conv-copy .conv-kicker { margin: 0 0 var(--space-4); color: var(--color-muted); }
+
+.site-foot { margin-top: clamp(24px, 4vw, 56px); }
+@media (max-width: 900px) {
+  .places-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .place { padding: 22px 10px 16px 0; border-bottom: var(--rule-hair) solid var(--color-line); }
+  .place:nth-child(odd) { padding-right: 14px; }
+  .places-grid::before { right: 14px; }
+  .section#work { padding-top: 56px; }
+  .boundaries { grid-template-columns: minmax(0, 1fr); gap: 12px; }
+  .boundaries-kick { position: static; }
+  .cta-band-in { padding-left: 22px; }
+}
+@media (max-width: 720px) {
+  .preface-inner { max-width: 60ch; }
+  .hero h1 { font-size: clamp(42px, 10.8vw, 66px); line-height: .96; }
+  .preface h2 { grid-template-columns: 30px minmax(0, 1fr); gap: 10px; }
+  .lang-list li { grid-template-columns: minmax(0, 1fr); gap: 4px; }
+  .lang-list .lang-name,.lang-list .p,.lang-list .c { grid-column: 1; grid-row: auto; text-align: left; }
+  .lang-list .p,.lang-list .c { padding-left: 32px; }
+  .lang-list .c { grid-column: 1 / -1; padding-left: 32px; }
+  .lang-list .lang-name::before { width: 20px; }
+  .places-coda { max-width: 38ch; }
+  .cta-band-actions { display: grid; justify-items: start; gap: var(--space-5); }
+}
+@media (prefers-reduced-motion: reduce) { .specimen--shot img { transform: none !important; } }
 /* places coda, client specimen, portrait legibility */
 .places-coda { margin: clamp(22px, 3vw, 34px) 0 0; max-width: 620px; font-family: var(--font-display); font-size: clamp(18px, 1.9vw, 25px); line-height: 1.5; color: var(--color-ink-2); }
 .places-coda em { font-style: italic; color: var(--color-accent); }
@@ -1294,7 +1391,63 @@ form { margin: 0; }
 .specimen--shot::before { display: none; }
 .specimen--shot img { display: block; width: 100%; height: auto; }
 .specimen--shot figcaption { position: static; inset: auto; padding: 12px 16px 14px; border-top: var(--rule-hair) solid var(--color-line); display: flex; justify-content: space-between; gap: 12px; }
-.work-links { margin-top: var(--space-5); }</style>
+.work-links { margin-top: var(--space-5); }
+/* ——— visual pass: chapter rails, geometry, rhythm ——— */
+.section, .places, .langs, .conversation, .cta-band { position: relative; }
+
+
+
+/* dot field behind the places story, fading out before the text */
+.places { isolation: isolate; }
+.places::before {
+  content: "";
+  position: absolute;
+  inset: 0 calc(var(--gutter) * -1) 0 calc(var(--gutter) * -1);
+  z-index: -1;
+  background-image: radial-gradient(circle, var(--color-ink) 1px, transparent 1.15px);
+  background-size: 15px 15px;
+  opacity: .10;
+  -webkit-mask-image: radial-gradient(ellipse at 78% 42%, #000 4%, transparent 66%);
+  mask-image: radial-gradient(ellipse at 78% 42%, #000 4%, transparent 66%);
+}
+
+/* measure line: hairline with tick marks, at the seam before a section */
+.section-head::after {
+  content: "";
+  display: block;
+  height: 1px;
+  margin-top: clamp(22px, 3vw, 38px);
+  background:
+    repeating-linear-gradient(90deg, var(--color-line-strong) 0 1px, transparent 1px 7px) left/100% 1px no-repeat,
+    var(--color-line);
+  opacity: .9;
+}
+
+/* tighter rhythm so the essay breathes instead of drifting */
+.section { padding-block: clamp(56px, 6.6vw, 104px); }
+.places { padding-block: clamp(46px, 5.4vw, 82px) clamp(26px, 3vw, 44px); }
+.langs { padding-block: clamp(40px, 4.6vw, 66px) clamp(46px, 5.4vw, 82px); }
+.cta-band { padding-block: clamp(30px, 4vw, 58px); }
+
+/* work items: a quiet left rail that ties the list together */
+.work-list { position: relative; }
+.work-list::before {
+  content: "";
+  position: absolute;
+  left: calc(var(--gutter) * -0.45);
+  top: 8px; bottom: 8px; width: 1px;
+  background: linear-gradient(to bottom, transparent, var(--color-line) 12%, var(--color-line) 88%, transparent);
+  display: none;
+}
+
+/* form: more air, stronger focus */
+.field { padding-block: var(--space-4) var(--space-3); }
+.field input, .field textarea { font-size: clamp(15px, 1.15vw, 17px); }
+.field:focus-within { background: linear-gradient(to right, color-mix(in srgb, var(--color-accent) 4%, transparent), transparent 60%); }
+@media (prefers-reduced-motion: no-preference) {
+  .work, .place, .lang-list li { transition: transform .5s var(--ease-out), border-color .4s var(--ease-out); }
+  .place:hover { transform: translateY(-2px); }
+}</style>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -1323,7 +1476,7 @@ form { margin: 0; }
     <div class="hero-grid">
       <div class="hero-main">
         <p class="hero-kicker mono"><i aria-hidden="true"></i>Born in India &middot; living globally &middot; Cairo for now</p>
-        <h1 id="hero-title">Language is the last <em>interface.</em></h1>
+        <h1 id="hero-title">Language is<br class="mobile-break"> the last <em>interface.</em></h1>
         <p class="lede">
           Ten years of shipping the things people meet first: storefronts, apps, and now AI that
           talks back. I build and run <strong>Talkingo</strong>, <strong>Mangodish</strong> and
@@ -1407,7 +1560,7 @@ form { margin: 0; }
 
   <section class="places shell" aria-labelledby="places-title">
     <div class="places-head reveal">
-      <h2 id="places-title">One person,<br>several addresses.</h2>
+      <h2 id="places-title" data-x="01 &mdash; Places">One person,<br>several addresses.</h2>
       <p>I was born in India and have never quite stayed put. The work travels; the desk moves; the name on the invoice is American.</p>
     </div>
     <div class="places-grid reveal">
@@ -1421,7 +1574,7 @@ form { margin: 0; }
 </section>
   <section class="section shell" id="work" aria-labelledby="work-title">
     <div class="section-head reveal">
-      <h2 id="work-title">Selected work</h2>
+      <h2 id="work-title" data-x="02 &mdash; Selected work">Selected work</h2>
       <p>Three ventures and the studio that holds them — language, hospitality and commerce, built by the same small team.</p>
     </div>
 
@@ -1598,7 +1751,8 @@ form { margin: 0; }
           </div>
           <figcaption>One photograph, two sentences, a checkout</figcaption>
         </figure>
-      </li>      <li class="work reveal" style="--i: 4">
+      </li>
+      <li class="work reveal" style="--i: 4">
         <div class="work-copy">
           <div class="work-meta">
             <span>Global Tours &amp; Travels</span><span>Travel · globaltts.in</span><span>Client</span>
@@ -1625,21 +1779,9 @@ form { margin: 0; }
     </ol>
   </section>
 
-  <section class="shell cta-band" aria-labelledby="cta-title">
-    <div class="cta-band-in">
-      <p class="mono cta-kick">If this is the work</p>
-      <h2 id="cta-title">The fourth venture<br>could be <em>yours.</em></h2>
-      <div class="cta-band-actions">
-        <a class="link-cta" href="#conversation">Start a conversation
-          <svg viewBox="0 0 12 12" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M2.5 9.5 9.5 2.5M4 2.5h5.5V8"/></svg>
-        </a>
-        <a class="link-quiet" href="digital.html">See how the studio works &#8599;</a>
-      </div>
-    </div>
-  </section>
   <section class="section shell" id="practice" aria-labelledby="practice-title">
     <div class="section-head reveal">
-      <h2 id="practice-title">What I build</h2>
+      <h2 id="practice-title" data-x="03 &mdash; Practice">What I build</h2>
       <p>Four disciplines, one habit: make the thing work before making it beautiful.</p>
     </div>
 
@@ -1669,17 +1811,17 @@ form { margin: 0; }
 
   <section class="langs shell" aria-labelledby="langs-title">
     <div class="places-head reveal">
-      <h2 id="langs-title">Seven languages,<br>one habit: listening.</h2>
+      <h2 id="langs-title" data-x="04 &mdash; Languages">Seven languages,<br>one habit: listening.</h2>
       <p>Speaking is the easy half. The other half is hearing what someone means before they finish the sentence &mdash; which is the only part that transfers to software.</p>
     </div>
     <ul class="lang-list reveal">
-      <li><span class="n">Hindi</span><span class="p">about 600 million people</span><span class="c">India &amp; the diaspora</span></li>
-      <li><span class="n">Urdu</span><span class="p">about 230 million people</span><span class="c">Pakistan &amp; the diaspora</span></li>
-      <li><span class="n">English</span><span class="p">about 1.5 billion people</span><span class="c">100+ countries</span></li>
-      <li><span class="n">Arabic</span><span class="p">about 420 million people</span><span class="c">25 countries &middot; incl. Egyptian</span></li>
-      <li><span class="n">Spanish</span><span class="p">about 500 million people</span><span class="c">20+ countries</span></li>
-      <li><span class="n">French</span><span class="p">about 300 million people</span><span class="c">29 countries</span></li>
-      <li><span class="n">Persian</span><span class="p">a little</span><span class="c">3 countries</span></li>
+      <li><span class="lang-name"><span class="n">Hindi</span><span class="script" lang="hi">हिन्दी</span></span><span class="p">about 600 million people</span><span class="c">India &amp; the diaspora</span></li>
+      <li><span class="lang-name"><span class="n">Urdu</span><span class="script" lang="ur">اردو</span></span><span class="p">about 230 million people</span><span class="c">Pakistan &amp; the diaspora</span></li>
+      <li><span class="lang-name"><span class="n">English</span></span><span class="p">about 1.5 billion people</span><span class="c">100+ countries</span></li>
+      <li><span class="lang-name"><span class="n">Arabic</span><span class="script" lang="ar">العربية</span></span><span class="p">about 420 million people</span><span class="c">25 countries &middot; incl. Egyptian</span></li>
+      <li><span class="lang-name"><span class="n">Spanish</span><span class="script" lang="es">Español</span></span><span class="p">about 500 million people</span><span class="c">20+ countries</span></li>
+      <li><span class="lang-name"><span class="n">French</span><span class="script" lang="fr">Français</span></span><span class="p">about 300 million people</span><span class="c">29 countries</span></li>
+      <li><span class="lang-name"><span class="n">Persian</span><span class="script" lang="fa">فارسی</span></span><span class="p">a little</span><span class="c">3 countries</span></li>
     </ul>
     <p class="langs-note mono">Figures are rough. Language is always bigger than its census. The list is still open &#8212; Turkish next, Mandarin after that.</p>
   </section>
@@ -1693,7 +1835,7 @@ form { margin: 0; }
   </section>
   <section class="section shell" id="background" aria-labelledby="bg-title">
     <div class="section-head reveal">
-      <h2 id="bg-title">Background</h2>
+      <h2 id="bg-title" data-x="06 &mdash; Background">Background</h2>
       <p>Ten years in, the interesting part is still the same: getting a sentence to land.</p>
     </div>
 
@@ -1717,10 +1859,23 @@ form { margin: 0; }
     </div>
   </section>
 
+  <section class="shell cta-band" aria-labelledby="cta-title">
+    <div class="cta-band-in">
+      <p class="mono cta-kick">08 / If this is the work</p>
+      <h2 id="cta-title">The next thing<br>could be <em>yours.</em></h2>
+      <div class="cta-band-actions">
+        <a class="link-cta" href="#conversation">Start a conversation
+          <svg viewBox="0 0 12 12" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M2.5 9.5 9.5 2.5M4 2.5h5.5V8"/></svg>
+        </a>
+        <a class="link-quiet" href="digital.html">See how the studio works &#8599;</a>
+      </div>
+    </div>
+  </section>
   <section class="section shell conversation" id="conversation" aria-labelledby="conv-title">
     <div class="conv-grid">
       <div class="conv-copy reveal">
-        <h2 id="conv-title">What do you keep postponing?</h2>
+        <p class="mono conv-kicker">09 / The next conversation</p>
+        <h2 id="conv-title" data-x="07 &mdash; Invitation">What do you keep postponing?</h2>
         <p class="conv-honest">If you have read this far, you already know whether it is worth twenty minutes.</p>
         <p>
           No deck, no pitch. Twenty minutes on the thing you are stuck on — a storefront that will
